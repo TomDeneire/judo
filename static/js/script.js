@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  var resid = await fetch("techniques.json");
+  // var resid = await fetch("techniques.json");
+  var resid = await fetch("https://tomdeneire.github.io/judo/techniques.json");
   const techniquesMap = await resid.json();
 
   const searchInput = document.getElementById("searchInput");
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       // Show result
       const videoUrl = techniquesMap[inputTechnique]["video"];
       const embedUrl = `https://www.youtube.com/embed/${_getVideoId(videoUrl)}?autoplay=1&mute=1`;
-      videoPlayer.innerHTML = `<iframe class="embed-responsive-item" src="${embedUrl}" allowfullscreen></iframe>`;
+      videoPlayer.innerHTML = `<iframe class="embed-responsive-item" style="width: 100%; height: 100%;" src="${embedUrl}" allowfullscreen></iframe>`;
       translation.innerHTML = techniquesMap[inputTechnique]["translation"];
       title.innerHTML = inputTechnique;
       information.style.display = "block";
