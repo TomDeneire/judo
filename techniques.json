@@ -1,0 +1,154 @@
+{
+  "harai-goshi": {
+    "video": "https://www.youtube.com/watch?v=qTo8HlAAkOo",
+    "category": "throw",
+    "bodypart": "hip",
+    "translation": "wegvegen-heup",
+    "belt": "green",
+    "reference": ""
+  },
+  "harai-makikomi": {
+    "video": "https://www.youtube.com/watch?v=VBaHzKaCXss",
+    "category": "throw",
+    "translation": "heup-inrollen-binnewaarts",
+    "belt": ""
+  },
+  "yoko-shiho-gatame": {
+    "video": "https://www.youtube.com/watch?v=TT7XJVSEQxA",
+    "category": "grip",
+    "translation": "zijwaarts-vier richtingen-insluiten",
+    "belt": "yellow"
+  },
+  "yoko-shiho-gatame (ontsnappingen)": {
+    "video": "https://www.youtube.com/watch?v=yK_GSamSPko",
+    "category": "grip",
+    "translation": "zijwaarts-vier richtingen-insluiten",
+    "belt": "yellow"
+  },
+  "koshi-guruma": {
+    "video": "https://www.youtube.com/watch?v=SU7Id6uVJ44",
+    "category": "throw",
+    "translation": "heup-wiel",
+    "belt": "yellow"
+  },
+  "o-uchi-gari": {
+    "video": "https://www.youtube.com/watch?v=0itJFhV9pDQ",
+    "category": "throw",
+    "translation": "groot-binnenkant-maaien",
+    "belt": "yellow"
+  },
+  "tate-shiho-gatame": {
+    "video": "https://www.youtube.com/watch?v=55-rFmBx53g",
+    "category": "grip",
+    "translation": "verticaal-vier richtingen-insluiten",
+    "belt": "yellow"
+  },
+  "tate-shiho-gatame (ontsnappingen)": {
+    "video": "https://www.youtube.com/watch?v=JMJBjnst_DA",
+    "category": "grip",
+    "translation": "verticaal-vier richtingen-insluiten",
+    "belt": "yellow"
+  },
+  "kami-shiho-gatame": {
+    "video": "https://www.youtube.com/watch?v=HFuMjOv0WN8",
+    "category": "grip",
+    "translation": "boven-vier richtingen-insluiten",
+    "belt": "yellow"
+  },
+  "kuzure-kesa-gatame": {
+    "video": "https://www.youtube.com/watch?v=Q2fb9jaoUFQ",
+    "category": "grip",
+    "translation": "onder liggen-diagonaal-insluiten",
+    "belt": "yellow"
+  },
+  "kuzure-kesa-gatame (ontsnappingen)": {
+    "video": "https://www.youtube.com/watch?v=-zFQ6h4yKT4",
+    "category": "grip",
+    "translation": "onder liggen-diagonaal-insluiten",
+    "belt": "yellow"
+  },
+  "o-soto-gari": {
+    "video": "https://www.youtube.com/watch?v=c-A_nP7mKAc",
+    "category": "throw",
+    "translation": "groot-buitenkant-maaien",
+    "belt": "yellow"
+  },
+  "uki-goshi": {
+    "video": "https://www.youtube.com/watch?v=bPKwtB4lyOQ",
+    "category": "throw",
+    "translation": "zweven-heup",
+    "belt": "yellow"
+  },
+  "de-ashi-harai": {
+    "video": "https://www.youtube.com/watch?v=4BUUvqxi_Kk",
+    "category": "throw",
+    "translation": "voorwaarts-voet-wegvegen",
+    "belt": "brown"
+  },
+  "hiza-guruma": {
+    "video": "https://www.youtube.com/watch?v=JPJx9-oAVns",
+    "category": "throw",
+    "translation": "knie-wiel",
+    "belt": "orange"
+  },
+  "seoi-nage": {
+    "video": "https://www.youtube.com/watch?v=zIq0xI0ogxk",
+    "category": "throw",
+    "translation": "dragen op schouder-werpen",
+    "belt": "orange"
+  },
+  "kesa-gatame": {
+    "video": "https://www.youtube.com/watch?v=NDaQuJOFBYk",
+    "category": "grip",
+    "translation": "diagonaal-insluiten",
+    "belt": "orange"
+  },
+  "kesa-gatame (ontsnappingen)": {
+    "video": "https://www.youtube.com/watch?v=5_TS0YHdxcQ",
+    "category": "grip",
+    "translation": "diagonaal-insluiten",
+    "belt": "orange"
+  },
+  "o-goshi": {
+    "video": "https://www.youtube.com/watch?v=yhu1mfy2vJ4",
+    "category": "throw",
+    "translation": "groot-heup",
+    "belt": "orange"
+  },
+  "kuzure-kami-shiho-gatame": {
+    "video": "https://www.youtube.com/watch?v=YUrogQWdwiY",
+    "category": "grip",
+    "translation": "onder liggen-boven-vier richtingen-insluiten",
+    "belt": "orange"
+  },
+  "kuzure-kami-shiho-gatame (ontsnappingen)": {
+    "video": "https://www.youtube.com/watch?v=PPe7E_7d7UI",
+    "category": "grip",
+    "translation": "onder liggen-boven-vier richtingen-insluiten",
+    "belt": "orange"
+  },
+  "ippon-seoi-nage": {
+    "video": "https://www.youtube.com/watch?v=FQnOlCxo4oI",
+    "category": "throw",
+    "translation": "één arm dragen op schouder-werpen",
+    "belt": "orange"
+  },
+  "ushiro-kesa-gatame": {
+    "video": "https://www.youtube.com/watch?v=SBapox2M2dE",
+    "category": "grip",
+    "translation": "achterwaartsen-diagonaal-insluiten",
+    "belt": "orange"
+  },
+  "ushiro-kesa-gatame (ontsnappingen)": {
+    "video": "https://www.youtube.com/watch?v=4QuzAAucQsA",
+    "category": "grip",
+    "translation": "achterwaartsen-diagonaal-insluiten",
+    "belt": "orange"
+  },
+  "de-ashi-barai": {
+    "video": "https://www.youtube.com/watch?v=4BUUvqxi_Kk",
+    "category": "throw",
+    "translation": "voorwaarts-voet-wegvegen",
+    "belt": "brown"
+  }
+}

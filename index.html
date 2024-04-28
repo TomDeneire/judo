@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Judo technieken</title>
+    <link rel="stylesheet" href="static/css/bootstrap.css" />
+  </head>
+  <body>
+    <h1>Judo technieken</h1>
+    <div class="container mt-4">
+      <input
+        type="text"
+        id="searchInput"
+        class="form-control"
+        placeholder="Zoek een techniek..."
+      />
+      <ul id="autoSuggest"></ul>
+    </div>
+    <div class="container mt-4" id="information" display="none">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" id="title"></h5>
+          <div
+            id="videoPlayer"
+            class="embed-responsive embed-responsive-16by9"
+          ></div>
+          <div>
+            <img
+              id="belt"
+              style="width: 40%"
+              src=""
+              alt=""
+              class="card-img-top"
+            />
+          </div>
+          <p class="card-text" id="translation"></p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="container mt-4"> -->
+    <!--   <div></div> -->
+    <!-- </div> -->
+
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/script.js"></script>
+  </body>
+</html>
