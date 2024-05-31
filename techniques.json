@@ -7,6 +7,36 @@
     "belt": "green",
     "reference": ""
   },
+  "kosoto-gari": {
+    "video": "https://www.youtube.com/watch?v=jeQ541ScLB4",
+    "category": "throw",
+    "translation": "klein-buitenkant-maaien",
+    "belt": "green"
+  },
+  "kata-gatame": {
+    "video": "https://www.youtube.com/watch?v=zQR3IOXxO_Q",
+    "category": "grip",
+    "translation": "schouder-insluiten",
+    "belt": "green"
+  },
+  "makura-kesa-gatame": {
+    "video": "https://www.youtube.com/watch?v=e5HrhANfDcU",
+    "category": "grip",
+    "translation": "hoofdkussen-flankcontrole",
+    "belt": "green"
+  },
+  "tsuri-komi-goshi": {
+    "video": "https://www.youtube.com/watch?v=McfzA0yRVt4",
+    "category": "throw",
+    "translation": "ophangen-binnenwaarts-heup",
+    "belt": "green"
+  },
+  "sasae-tsuri-komi-ashi": {
+    "video": "https://www.youtube.com/watch?v=699i--pvYmE",
+    "category": "throw",
+    "translation": "dragen-ophangen-binnenwaarts-voet",
+    "belt": "green"
+  },
   "harai-makikomi": {
     "video": "https://www.youtube.com/watch?v=VBaHzKaCXss",
     "category": "throw",
