@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  // var resid = await fetch("techniques.json");
-  var resid = await fetch("https://tomdeneire.github.io/judo/techniques.json");
+  var resid = await fetch("techniques.json");
+  // var resid = await fetch("https://tomdeneire.github.io/judo/techniques.json");
   const techniquesMap = await resid.json();
 
   const searchInput = document.getElementById("searchInput");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const information = document.getElementById("information");
   const title = document.getElementById("title");
   const translation = document.getElementById("translation");
-  const belt = document.getElementById("belt");
+  const card = document.getElementById("card");
 
   // Perform search
   function searchEvent(suggest) {
@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       translation.innerHTML = techniquesMap[inputTechnique]["translation"];
       title.innerHTML = inputTechnique;
       information.style.display = "block";
-      belt.src = `static/assets/img/${techniquesMap[inputTechnique]["belt"]}_belt.png`;
+      card.style.borderWidth = "1pc";
+      card.style.borderColor = techniquesMap[inputTechnique]["belt"];
     } else {
       // Clear the video player if invalid technique
       videoPlayer.innerHTML = "";
