@@ -6,25 +6,24 @@ const resid = await fetch("techniques.json");
 // var resid = await fetch("https://tomdeneire.github.io/judo/techniques.json");
 const techniquesMap = await resid.json();
 const techniques = Object.keys(techniquesMap);
-
 const searchInput = document.getElementById("searchInput");
 const autoSuggest = document.getElementById("autoSuggest");
 const videoPlayer = document.getElementById("videoPlayer");
 const information = document.getElementById("information");
 const title = document.getElementById("title");
 const translation = document.getElementById("translation");
-const card = document.getElementById("card");
+const infoCard = document.getElementById("infoCard");
 const beltTechniques = document.getElementById("beltTechniques");
-const buttons = beltTechniques.querySelectorAll("button");
+const beltButtons = beltTechniques.querySelectorAll("button");
 
 /**
  * HELPER FUNCTIONS
  */
 
 /**
- * Clear previous result on screen
+ * Clear screen
  */
-function clearPreviousResult() {
+function clearScreen() {
   // Clear previous data
   // searchInput.value = "";
   videoPlayer.innerHTML = "";
@@ -69,14 +68,14 @@ function addHitToSuggestions(technique) {
  * Show video technique
  */
 function showTechnique(technique) {
+  title.innerHTML = technique;
   const videoUrl = techniquesMap[technique]["video"];
   const embedUrl = `https://www.youtube.com/embed/${_getVideoId(videoUrl)}?autoplay=1&mute=1`;
   videoPlayer.innerHTML = `<iframe class="embed-responsive-item" style="width: 100%; height: 100%;" src="${embedUrl}" allowfullscreen></iframe>`;
   translation.innerHTML = `"${technique}" = "${techniquesMap[technique]["translation"]}`;
-  title.innerHTML = technique;
+  infoCard.style.borderWidth = "0.4pc";
+  infoCard.style.borderColor = techniquesMap[technique]["belt"];
   information.style.display = "block";
-  card.style.borderWidth = "1pc";
-  card.style.borderColor = techniquesMap[technique]["belt"];
 }
 
 /**
@@ -93,13 +92,16 @@ function searchEvent(suggest) {
   if (techniquesMap.hasOwnProperty(technique)) {
     showTechnique(technique);
   } else {
-    clearPreviousResult();
+    clearScreen();
   }
   const input = document.getElementById("searchInput").value.toLowerCase();
   autoSuggest.innerHTML = ""; // Clear previous suggestions
 
   // Search technique
   if (suggest) {
+    if (technique.length < 0) {
+      return;
+    }
     techniques.forEach((technique) => {
       const hit =
         technique.includes(input) ||
@@ -115,7 +117,7 @@ function searchEvent(suggest) {
  * Search by input
  */
 function searchBelt(color) {
-  clearPreviousResult();
+  clearScreen();
   // Show techniques for this belt
   techniques.forEach((technique) => {
     if (techniquesMap[technique]["belt"] == color) {
@@ -132,7 +134,7 @@ searchInput.addEventListener("input", function () {
   searchEvent(true);
 });
 
-buttons.forEach((button) => {
+beltButtons.forEach((button) => {
   button.addEventListener("click", function () {
     searchBelt(button.id);
   });
