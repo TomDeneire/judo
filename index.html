@@ -17,6 +17,46 @@
       />
       <ul id="autoSuggest" style="cursor: pointer"></ul>
     </div>
+    <div class="container mt-3">
+      <label class="text-secondary">technieken per gordel</label>
+      <div
+        class="btn-group"
+        role="group"
+        aria-label="Technieken per gordel"
+        id="beltTechniques"
+      >
+        <button
+          type="button"
+          id="yellow"
+          class="btn btn-secondary"
+          style="background-color: yellow; width: 3pc"
+        ></button>
+        <button
+          type="button"
+          id="orange"
+          class="btn btn-secondary"
+          style="background-color: orange; width: 3pc"
+        ></button>
+        <button
+          type="button"
+          id="green"
+          class="btn btn-secondary"
+          style="background-color: green; width: 3pc"
+        ></button>
+        <button
+          type="button"
+          id="blue"
+          class="btn btn-secondary"
+          style="background-color: blue; width: 3pc"
+        ></button>
+        <button
+          type="button"
+          id="brown"
+          class="btn btn-secondary"
+          style="background-color: brown; width: 3pc"
+        ></button>
+      </div>
+    </div>
     <div class="container mt-4" id="information" display="none">
       <div class="card" id="card">
         <div class="card-body">
@@ -25,7 +65,7 @@
             id="videoPlayer"
             class="embed-responsive embed-responsive-16by9"
           ></div>
-          <p class="card-text" id="translation"></p>
+          <p class="text-secondary" id="translation"></p>
         </div>
       </div>
     </div>
@@ -34,6 +74,6 @@
     <!-- </div> -->
 
     <script src="static/js/bootstrap.js"></script>
-    <script src="static/js/script.js"></script>
+    <script src="static/js/script.js" type="module"></script>
   </body>
 </html>
