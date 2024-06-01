@@ -65,13 +65,25 @@ function addHitToSuggestions(technique) {
 }
 
 /**
+ * Get video dimensions
+ */
+function _getVideoDimensions() {
+  const isMobile = navigator.userAgentData.mobile;
+  if (isMobile) {
+    console.log("User is on a mobile device.");
+  } else {
+    return "width: 100%; height: 100%";
+  }
+}
+
+/**
  * Show video technique
  */
 function showTechnique(technique) {
   title.innerHTML = technique;
   const videoUrl = techniquesMap[technique]["video"];
   const embedUrl = `https://www.youtube.com/embed/${_getVideoId(videoUrl)}?autoplay=1&mute=1`;
-  videoPlayer.innerHTML = `<iframe class="embed-responsive-item" style="width: 100%; height: 100%;" src="${embedUrl}" allowfullscreen></iframe>`;
+  videoPlayer.innerHTML = `<iframe class="embed-responsive-item" style="${_getVideoDimensions()}" src="${embedUrl}" allowfullscreen></iframe>`;
   translation.innerHTML = `"${technique}" = "${techniquesMap[technique]["translation"]}`;
   infoCard.style.borderWidth = "0.4pc";
   infoCard.style.borderColor = techniquesMap[technique]["belt"];
