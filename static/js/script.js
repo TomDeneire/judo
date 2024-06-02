@@ -72,7 +72,10 @@ function showTechnique(technique) {
   const videoUrl = techniquesMap[technique]["video"];
   const embedUrl = `https://www.youtube.com/embed/${_getVideoId(videoUrl)}?autoplay=1&mute=1`;
   videoPlayer.innerHTML = `<iframe class="embed-responsive-item" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="${embedUrl}" allowfullscreen></iframe>`;
-  translation.innerHTML = `"${technique}" = "${techniquesMap[technique]["translation"]}`;
+  const translatedTechnique = techniquesMap[technique]["translation"];
+  if (translatedTechnique != "") {
+    translation.innerHTML = `"${technique}" = "${techniquesMap[technique]["translation"]}"`;
+  }
   infoCard.style.borderWidth = "0.4pc";
   infoCard.style.borderColor = techniquesMap[technique]["belt"];
   information.style.display = "block";
