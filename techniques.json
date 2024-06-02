@@ -31,6 +31,48 @@
     "translation": "ophangen-binnenwaarts-heup",
     "belt": "green"
   },
+  "ko-uchi-gari": {
+    "video": "https://www.youtube.com/watch?v=3Jb3tZvr9Ng",
+    "category": "throw",
+    "translation": "klein-binnenkant-maaien",
+    "belt": "blue"
+  },
+  "tai-otoshi": {
+    "video": "https://www.youtube.com/watch?v=4x6S3Q-Ktv8",
+    "category": "throw",
+    "translation": "lichaam-laten vallen",
+    "belt": "blue"
+  },
+  "okuri-ashi-harai": {
+    "video": "https://www.youtube.com/watch?v=nw1ZdRjrdRI",
+    "category": "throw",
+    "translation": "beide benen-voet-wegvegen",
+    "belt": "blue"
+  },
+  "uchi-mata": {
+    "video": "https://www.youtube.com/watch?v=iUpSu5J-bgw",
+    "category": "throw",
+    "translation": "binnenkant-dij",
+    "belt": "blue"
+  },
+  "hane-goshi": {
+    "video": "https://www.youtube.com/watch?v=M9_7De6A1kk",
+    "category": "throw",
+    "translation": "vleugel-heup",
+    "belt": "brown"
+  },
+  "uki-otoshi": {
+    "video": "https://www.youtube.com/watch?v=6H5tmncOY4Q",
+    "category": "throw",
+    "translation": "zweven-laten vallen",
+    "belt": "brown"
+  },
+  "kata-guruma": {
+    "video": "https://www.youtube.com/watch?v=cnHRhSy8yi4",
+    "category": "throw",
+    "translation": "schouder-rad",
+    "belt": "brown"
+  },
   "sasae-tsuri-komi-ashi": {
     "video": "https://www.youtube.com/watch?v=699i--pvYmE",
     "category": "throw",
