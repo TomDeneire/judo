@@ -15,6 +15,8 @@ const translation = document.getElementById("translation");
 const infoCard = document.getElementById("infoCard");
 const beltTechniques = document.getElementById("beltTechniques");
 const beltButtons = beltTechniques.querySelectorAll("button");
+const bodyTechniques = document.getElementById("bodyTechniques");
+const bodyButtons = bodyTechniques.querySelectorAll("button");
 
 /**
  * HELPER FUNCTIONS
@@ -53,6 +55,15 @@ function _addevent(element) {
   });
 }
 
+const backgroundColors = {
+  yellow: "lightyellow",
+  green: "lightgreen",
+  orange: "orange",
+  blue: "lightblue",
+  brown: "sienna",
+  "": "lightgrey",
+};
+
 /**
  * Add hit to suggestions
  */
@@ -60,6 +71,7 @@ function addHitToSuggestions(technique) {
   const li = document.createElement("li");
   li.id = technique;
   li.textContent = technique;
+  li.style.backgroundColor = backgroundColors[techniquesMap[technique]["belt"]];
   _addevent(li);
   autoSuggest.appendChild(li);
 }
@@ -108,6 +120,7 @@ function searchEvent(suggest) {
     techniques.forEach((technique) => {
       const hit =
         technique.includes(input) ||
+        technique.includes(input.replace("katame", "gatame")) ||
         techniquesMap[technique]["translation"].includes(input);
       if (hit) {
         addHitToSuggestions(technique);
@@ -140,5 +153,12 @@ searchInput.addEventListener("input", function () {
 beltButtons.forEach((button) => {
   button.addEventListener("click", function () {
     searchBelt(button.id);
+  });
+});
+
+bodyButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    searchInput.value = button.id;
+    searchEvent(true);
   });
 });

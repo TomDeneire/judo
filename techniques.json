@@ -17,12 +17,6 @@
     "translation": "groeten",
     "video": "https://www.youtube.com/watch?v=BBZG9N4cW0U"
   },
-  "de-ashi-barai": {
-    "belt": "brown",
-    "category": "throw",
-    "translation": "voorwaarts-voet-wegvegen",
-    "video": "https://www.youtube.com/watch?v=4BUUvqxi_Kk"
-  },
   "de-ashi-harai": {
     "belt": "brown",
     "category": "throw",
@@ -121,7 +115,7 @@
     "translation": "heup-wiel",
     "video": "https://www.youtube.com/watch?v=SU7Id6uVJ44"
   },
-  "kosoto-gari": {
+  "ko-soto-gari": {
     "belt": "green",
     "category": "throw",
     "translation": "klein-buitenkant-maaien",
