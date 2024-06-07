@@ -7,6 +7,7 @@ const resid = await fetch("techniques.json");
 const TECHNIQUESMAP = await resid.json();
 const TECHNIQUES = Object.keys(TECHNIQUESMAP);
 const SEARCHINPUT = document.getElementById("searchInput");
+const AUTOSUGGESTCARD = document.getElementById("autoSuggestCard");
 const AUTOSUGGEST = document.getElementById("autoSuggest");
 const VIDEOPLAYER = document.getElementById("videoPlayer");
 const INFORMATION = document.getElementById("information");
@@ -23,6 +24,7 @@ const INFOCARD = document.getElementById("infoCard");
  */
 function clearScreen() {
   VIDEOPLAYER.innerHTML = "";
+  AUTOSUGGESTCARD.style.display = "none";
   AUTOSUGGEST.innerHTML = "";
   TITLE.innerHTML = "";
   TRANSLATION.innerHTML = "";
@@ -63,6 +65,7 @@ const backgroundColors = {
  */
 function addHitToSuggestions(technique) {
   const li = document.createElement("li");
+  li.classList.add("list-group-item");
   li.id = technique;
   li.textContent = technique;
   li.style.backgroundColor = backgroundColors[TECHNIQUESMAP[technique]["belt"]];
@@ -117,6 +120,9 @@ function searchEvent(suggest) {
         technique.includes(input.replace("katame", "gatame")) ||
         TECHNIQUESMAP[technique]["translation"].includes(input);
       if (hit) {
+        if ((AUTOSUGGESTCARD.style.display = "none")) {
+          AUTOSUGGESTCARD.style.display = "block";
+        }
         addHitToSuggestions(technique);
       }
     });
@@ -128,6 +134,7 @@ function searchEvent(suggest) {
  */
 function searchCategory(searchValue, category) {
   clearScreen();
+  AUTOSUGGESTCARD.style.display = "block";
   // Show techniques for this belt
   TECHNIQUES.forEach((technique) => {
     if (TECHNIQUESMAP[technique][category] == searchValue) {
