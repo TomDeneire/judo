@@ -1,21 +1,9 @@
 {
   "ashi-garami": {
     "belt": "",
-    "category": "grip",
+    "category": "clamp",
     "translation": "voet-ineengestrengeld",
     "video": "https://www.youtube.com/watch?v=BWWb0GoAtZw"
-  },
-  "judogi": {
-    "belt": "yellow",
-    "category": "protocol",
-    "translation": "judopak",
-    "video": "https://www.youtube.com/watch?v=XQHhDxi4-eg"
-  },
-  "rei": {
-    "belt": "yellow",
-    "category": "protocol",
-    "translation": "groeten",
-    "video": "https://www.youtube.com/watch?v=BBZG9N4cW0U"
   },
   "de-ashi-harai": {
     "belt": "brown",
@@ -23,11 +11,23 @@
     "translation": "voorwaarts-voet-wegvegen",
     "video": "https://www.youtube.com/watch?v=4BUUvqxi_Kk"
   },
+  "do-jime": {
+    "belt": "",
+    "category": "strangle",
+    "translation": "romp-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=D_0fFcoIbvY"
+  },
   "gyaku-juji-jime": {
     "belt": "blue",
-    "category": "grip",
+    "category": "strangle",
     "translation": "verdraaid-gekruist-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=t3tQriIPdlI"
+  },
+  "hadaka-eri-jime": {
+    "belt": "",
+    "category": "strangle",
+    "translation": "bloot-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=9f0n8jez7iA"
   },
   "hane-goshi": {
     "belt": "brown",
@@ -46,7 +46,7 @@
   "harai-makikomi": {
     "belt": "",
     "category": "throw",
-    "translation": "heup-inrollen-binnewaarts",
+    "translation": "heup-inrollen-binnenwaarts",
     "video": "https://www.youtube.com/watch?v=VBaHzKaCXss"
   },
   "hiza-guruma": {
@@ -60,6 +60,12 @@
     "category": "throw",
     "translation": "één arm dragen op schouder-werpen",
     "video": "https://www.youtube.com/watch?v=FQnOlCxo4oI"
+  },
+  "judogi": {
+    "belt": "yellow",
+    "category": "protocol",
+    "translation": "judopak",
+    "video": "https://www.youtube.com/watch?v=XQHhDxi4-eg"
   },
   "kami-shiho-gatame": {
     "belt": "yellow",
@@ -87,9 +93,21 @@
   },
   "kata-juji-jime": {
     "belt": "blue",
-    "category": "grip",
+    "category": "strangle",
     "translation": "schouder-gekruist-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=3VZVUAmiMD8"
+  },
+  "kataha-jime": {
+    "belt": "",
+    "category": "strangle",
+    "translation": "enkele vleugel-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=yaTGgRjnwB8"
+  },
+  "katate-jime": {
+    "belt": "",
+    "category": "strangle",
+    "translation": "vormhand-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=cHeIs-fSqwE"
   },
   "kesa-gatame": {
     "belt": "orange",
@@ -103,6 +121,12 @@
     "translation": "diagonaal-insluiten",
     "video": "https://www.youtube.com/watch?v=5_TS0YHdxcQ"
   },
+  "ko-soto-gari": {
+    "belt": "green",
+    "category": "throw",
+    "translation": "klein-buitenkant-maaien",
+    "video": "https://www.youtube.com/watch?v=jeQ541ScLB4"
+  },
   "ko-uchi-gari": {
     "belt": "blue",
     "category": "throw",
@@ -114,12 +138,6 @@
     "category": "throw",
     "translation": "heup-wiel",
     "video": "https://www.youtube.com/watch?v=SU7Id6uVJ44"
-  },
-  "ko-soto-gari": {
-    "belt": "green",
-    "category": "throw",
-    "translation": "klein-buitenkant-maaien",
-    "video": "https://www.youtube.com/watch?v=jeQ541ScLB4"
   },
   "kuzure-kami-shiho-gatame": {
     "belt": "orange",
@@ -175,7 +193,7 @@
   },
   "nami-juji-jime": {
     "belt": "blue",
-    "category": "grip",
+    "category": "strangle",
     "translation": "gewoon-gekruist-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=k2cHry9HByQ"
   },
@@ -203,6 +221,30 @@
     "translation": "beide benen-voet-wegvegen",
     "video": "https://www.youtube.com/watch?v=nw1ZdRjrdRI"
   },
+  "okuri-eri-jime": {
+    "belt": "",
+    "category": "strangle",
+    "translation": "sturen-kraag-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=EiqyoVcIAi8"
+  },
+  "rei": {
+    "belt": "yellow",
+    "category": "protocol",
+    "translation": "groeten",
+    "video": "https://www.youtube.com/watch?v=BBZG9N4cW0U"
+  },
+  "ryote-jime": {
+    "belt": "",
+    "category": "strangle",
+    "translation": "tweehand-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=-RHC4V7TQiY"
+  },
+  "sankaku-jime": {
+    "belt": "",
+    "category": "strangle",
+    "translation": "driehoek-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=lq1CUBRAm7s"
+  },
   "sasae-tsuri-komi-ashi": {
     "belt": "green",
     "category": "throw",
@@ -220,6 +262,12 @@
     "category": "throw",
     "translation": "dragen-laten vallen",
     "video": "https://www.youtube.com/watch?v=vu1TMVNnq34"
+  },
+  "sode-guruma-jime": {
+    "belt": "",
+    "category": "strangle",
+    "translation": "mouw-rad-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=E3nvQzClcAU"
   },
   "tai-otoshi": {
     "belt": "blue",
@@ -239,6 +287,12 @@
     "translation": "verticaal-vier richtingen-insluiten",
     "video": "https://www.youtube.com/watch?v=JMJBjnst_DA"
   },
+  "tsukomi-jime": {
+    "belt": "",
+    "category": "strangle",
+    "translation": "duwen-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=dKKpnD3eLcY"
+  },
   "tsuri-komi-goshi": {
     "belt": "green",
     "category": "throw",
@@ -253,21 +307,9 @@
   },
   "ude-garami": {
     "belt": "blue",
-    "category": "grip",
+    "category": "clamp",
     "translation": "arm-ineengestrengeld (U18)",
     "video": "https://www.youtube.com/watch?v=AIlTvZb4RlE"
-  },
-  "ude-hishigi-juji-gatame": {
-    "belt": "blue",
-    "category": "grip",
-    "translation": "arm-breken-kruis-insluiten (U18)",
-    "video": "https://www.youtube.com/watch?v=OWgSOlCuMXw"
-  },
-  "ude-hishigi-te-gatame": {
-    "belt": "",
-    "category": "grip",
-    "translation": "arm-breken-hand-insluiten (U18)",
-    "video": "https://www.youtube.com/watch?v=6DnvhY0tQVM"
   },
   "ude-hishigi-ashi-gatame": {
     "belt": "",
@@ -281,17 +323,29 @@
     "translation": "arm-breken-buik-insluiten (U18)",
     "video": "https://www.youtube.com/watch?v=ZzEycg8R_9M"
   },
-  "ude-hishigi-waki-gatame": {
-    "belt": "",
-    "category": "grip",
-    "translation": "arm-breken-zijde-insluiten (U18)",
-    "video": "https://www.youtube.com/watch?v=8F5p1zuJRG0"
-  },
   "ude-hishigi-hiza-gatame": {
     "belt": "",
     "category": "grip",
     "translation": "arm-breken-knie-insluiten (U18)",
     "video": "https://www.youtube.com/watch?v=H2HtAJdiJcE"
+  },
+  "ude-hishigi-juji-gatame": {
+    "belt": "blue",
+    "category": "grip",
+    "translation": "arm-breken-kruis-insluiten (U18)",
+    "video": "https://www.youtube.com/watch?v=OWgSOlCuMXw"
+  },
+  "ude-hishigi-sankaku-gatame": {
+    "belt": "",
+    "category": "grip",
+    "translation": "arm-breken-driehoek-insluiten (U18)",
+    "video": "https://www.youtube.com/watch?v=WefAmW4azhk"
+  },
+  "ude-hishigi-te-gatame": {
+    "belt": "",
+    "category": "grip",
+    "translation": "arm-breken-hand-insluiten (U18)",
+    "video": "https://www.youtube.com/watch?v=6DnvhY0tQVM"
   },
   "ude-hishigi-ude-gatame": {
     "belt": "",
@@ -299,11 +353,11 @@
     "translation": "arm-breken-arm-insluiten (U18)",
     "video": "https://www.youtube.com/watch?v=SBf0aTma1VI"
   },
-  "ude-hishigi-sankaku-gatame": {
+  "ude-hishigi-waki-gatame": {
     "belt": "",
     "category": "grip",
-    "translation": "arm-breken-driehoek-insluiten (U18)",
-    "video": "https://www.youtube.com/watch?v=WefAmW4azhk"
+    "translation": "arm-breken-zijde-insluiten (U18)",
+    "video": "https://www.youtube.com/watch?v=8F5p1zuJRG0"
   },
   "uki-goshi": {
     "belt": "yellow",
