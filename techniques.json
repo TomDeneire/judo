@@ -5,6 +5,12 @@
     "translation": "voet-ineengestrengeld",
     "video": "https://www.youtube.com/watch?v=BWWb0GoAtZw"
   },
+  "daki-wakare": {
+    "belt": "",
+    "category": "throw",
+    "translation": "van achteren-scheiden",
+    "video": "https://www.youtube.com/watch?v=Hr0cOMGBDYo"
+  },
   "de-ashi-harai": {
     "belt": "brown",
     "category": "throw",
@@ -35,6 +41,18 @@
     "translation": "vleugel-heup",
     "video": "https://www.youtube.com/watch?v=M9_7De6A1kk"
   },
+  "hane-goshi-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "vleugel-heup-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=9bZAZSBtnGs"
+  },
+  "hane-makikomi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "vleugel-inrollen-binnenwaarts",
+    "video": "https://www.youtube.com/watch?v=6CRBGLGz9j8"
+  },
   "harai-goshi": {
     "belt": "green",
     "bodypart": "hip",
@@ -43,11 +61,23 @@
     "translation": "wegvegen-heup",
     "video": "https://www.youtube.com/watch?v=qTo8HlAAkOo"
   },
+  "harai-goshi-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "wegvegen-heup-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=4U3It-7PPsc"
+  },
   "harai-makikomi": {
     "belt": "",
     "category": "throw",
     "translation": "heup-inrollen-binnenwaarts",
     "video": "https://www.youtube.com/watch?v=VBaHzKaCXss"
+  },
+  "hikikomi-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "naar beneden trekken-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=92zUYWBp5N8"
   },
   "hiza-guruma": {
     "belt": "orange",
@@ -79,11 +109,23 @@
     "translation": "boven-vier richtingen-insluiten",
     "video": "https://www.youtube.com/watch?v=seGsXy9I4G8"
   },
+  "kani-basami": {
+    "belt": "",
+    "category": "throw",
+    "translation": "zeekreeft-schaartechniek",
+    "video": "https://www.youtube.com/watch?v=OR-HGHnarYc"
+  },
   "kata-gatame": {
     "belt": "green",
     "category": "grip",
     "translation": "schouder-insluiten",
     "video": "https://www.youtube.com/watch?v=zQR3IOXxO_Q"
+  },
+  "kata-gatame (ontsnappingen)": {
+    "belt": "green",
+    "category": "grip",
+    "translation": "schouder-insluiten",
+    "video": "https://www.youtube.com/watch?v=7hP1-W2yovk"
   },
   "kata-guruma": {
     "belt": "brown",
@@ -109,6 +151,12 @@
     "translation": "vormhand-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=cHeIs-fSqwE"
   },
+  "kawazu-gake": {
+    "belt": "",
+    "category": "throw",
+    "translation": "één-been-haken",
+    "video": "https://www.youtube.com/watch?v=w6G57bWACi0"
+  },
   "kesa-gatame": {
     "belt": "orange",
     "category": "grip",
@@ -132,6 +180,12 @@
     "category": "throw",
     "translation": "klein-binnenkant-maaien",
     "video": "https://www.youtube.com/watch?v=3Jb3tZvr9Ng"
+  },
+  "ko-uchi-makikomi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "klein-binnenkant-inrollen-binnenwaarts",
+    "video": "https://www.youtube.com/watch?v=_1eygIXLD_w"
   },
   "koshi-guruma": {
     "belt": "yellow",
@@ -209,6 +263,12 @@
     "translation": "groot-buitenkant-maaien",
     "video": "https://www.youtube.com/watch?v=c-A_nP7mKAc"
   },
+  "o-soto-makikomi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "groot-buitenkant-inrollen-binnenwaarts",
+    "video": "https://www.youtube.com/watch?v=DGDv2oMwmas"
+  },
   "o-uchi-gari": {
     "belt": "yellow",
     "category": "throw",
@@ -269,11 +329,29 @@
     "translation": "mouw-rad-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=E3nvQzClcAU"
   },
+  "soto-makikomi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "buitenkant-inrollen-binnenwaarts",
+    "video": "https://www.youtube.com/watch?v=bWG9O1BVKtQ"
+  },
+  "sumi-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "hoek-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=5VhduA5xkbA"
+  },
   "tai-otoshi": {
     "belt": "blue",
     "category": "throw",
     "translation": "lichaam-laten vallen",
     "video": "https://www.youtube.com/watch?v=4x6S3Q-Ktv8"
+  },
+  "tani-otoshi": {
+    "belt": "blue",
+    "category": "throw",
+    "translation": "dal-laten vallen",
+    "video": "https://www.youtube.com/watch?v=3b9Me3Fohpk"
   },
   "tate-shiho-gatame": {
     "belt": "yellow",
@@ -287,6 +365,12 @@
     "translation": "verticaal-vier richtingen-insluiten",
     "video": "https://www.youtube.com/watch?v=JMJBjnst_DA"
   },
+  "tawara-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "scheppend overnemen-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=TmTWgrmViZc"
+  },
   "tsukomi-jime": {
     "belt": "",
     "category": "strangle",
@@ -299,11 +383,29 @@
     "translation": "ophangen-binnenwaarts-heup",
     "video": "https://www.youtube.com/watch?v=McfzA0yRVt4"
   },
+  "uchi-makikomi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "binnenkant-inrollen-binnenwaarts",
+    "video": "https://www.youtube.com/watch?v=5BowcjduxVc"
+  },
   "uchi-mata": {
     "belt": "blue",
     "category": "throw",
     "translation": "binnenkant-dij",
     "video": "https://www.youtube.com/watch?v=iUpSu5J-bgw"
+  },
+  "uchi-mata-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "binnenkant-dij-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=Sy6sLWxkWYw"
+  },
+  "uchi-mata-makikomi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "binnenkant-dij-inrollen-binnenwaarts",
+    "video": "https://www.youtube.com/watch?v=jZXENTLpJCI"
   },
   "ude-garami": {
     "belt": "blue",
@@ -359,6 +461,18 @@
     "translation": "arm-breken-zijde-insluiten (U18)",
     "video": "https://www.youtube.com/watch?v=8F5p1zuJRG0"
   },
+  "uki-gatame": {
+    "belt": "",
+    "category": "grip",
+    "translation": "zweven-insluiten",
+    "video": "https://www.youtube.com/watch?v=e_lAjik1SUM"
+  },
+  "uki-gatame (ontsnappingen)": {
+    "belt": "",
+    "category": "grip",
+    "translation": "zweven-insluiten",
+    "video": "https://www.youtube.com/watch?v=AMHWDFR4ryo"
+  },
   "uki-goshi": {
     "belt": "yellow",
     "category": "throw",
@@ -370,6 +484,30 @@
     "category": "throw",
     "translation": "zweven-laten vallen",
     "video": "https://www.youtube.com/watch?v=6H5tmncOY4Q"
+  },
+  "uki-waza": {
+    "belt": "",
+    "category": "throw",
+    "translation": "zweven-techniek",
+    "video": "https://www.youtube.com/watch?v=weVOpJ63gII"
+  },
+  "ura-gatame": {
+    "belt": "",
+    "category": "grip",
+    "translation": "ruggelings-insluiten",
+    "video": "https://www.youtube.com/watch?v=eeAHZB0v3XY"
+  },
+  "ura-gatame (ontsnappingen)": {
+    "belt": "",
+    "category": "grip",
+    "translation": "ruggelings-insluiten",
+    "video": "https://www.youtube.com/watch?v=0aY2Tmchzs8"
+  },
+  "ura-nage": {
+    "belt": "",
+    "category": "throw",
+    "translation": "ruggelings-werpen",
+    "video": "https://www.youtube.com/watch?v=Fgi9b8DJ5sQ"
   },
   "ushiro-kesa-gatame": {
     "belt": "orange",
@@ -390,6 +528,24 @@
     "translation": "achterwaartse val",
     "video": "https://www.youtube.com/watch?v=_g7rvsxTkz8"
   },
+  "yoko-gake": {
+    "belt": "",
+    "category": "throw",
+    "translation": "zijwaarts-haken",
+    "video": "https://www.youtube.com/watch?v=tP1Sj1uDfSo"
+  },
+  "yoko-guruma": {
+    "belt": "",
+    "category": "throw",
+    "translation": "zijwaarts-wiel",
+    "video": "https://www.youtube.com/watch?v=MehP6I5cY2c"
+  },
+  "yoko-otoshi": {
+    "belt": "blue",
+    "category": "throw",
+    "translation": "zijwaarts-laten vallen",
+    "video": "https://www.youtube.com/watch?v=MnNG67pF_a0"
+  },
   "yoko-shiho-gatame": {
     "belt": "yellow",
     "category": "grip",
@@ -408,6 +564,12 @@
     "reference": "",
     "translation": "zijwaartse val",
     "video": "https://www.youtube.com/watch?v=JCwK1Ia4jsc"
+  },
+  "yoko-wakare": {
+    "belt": "",
+    "category": "throw",
+    "translation": "zijwaarts-scheiden",
+    "video": "https://www.youtube.com/watch?v=bp1tscHlePI"
   },
   "zempo-kaiten": {
     "belt": "orange",
