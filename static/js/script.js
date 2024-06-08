@@ -46,7 +46,8 @@ function getVideoId(url) {
 function addEvent(element) {
   element.addEventListener("click", function () {
     const input = document.getElementById("searchInput");
-    input.value = element.innerHTML;
+    input.value = element.technique;
+    clearScreen();
     searchEvent(false);
   });
 }
@@ -63,11 +64,14 @@ const backgroundColors = {
 /**
  * Add hit to suggestions
  */
-function addHitToSuggestions(technique) {
+function addHitToSuggestions(technique, input) {
   const li = document.createElement("li");
   li.classList.add("list-group-item");
   li.id = technique;
-  li.textContent = technique;
+  li.innerHTML =
+    technique.replace(input, `<b>${input}</b>`) +
+    ` <label class="small">(${TECHNIQUESMAP[technique]["translation"]})</label>`;
+  li.technique = technique;
   li.style.backgroundColor = backgroundColors[TECHNIQUESMAP[technique]["belt"]];
   addEvent(li);
   AUTOSUGGEST.appendChild(li);
@@ -123,7 +127,7 @@ function searchEvent(suggest) {
         if ((AUTOSUGGESTCARD.style.display = "none")) {
           AUTOSUGGESTCARD.style.display = "block";
         }
-        addHitToSuggestions(technique);
+        addHitToSuggestions(technique, input);
       }
     });
   }
