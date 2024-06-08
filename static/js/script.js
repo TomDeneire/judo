@@ -135,9 +135,13 @@ function searchEvent(suggest) {
 function searchCategory(searchValue, category) {
   clearScreen();
   AUTOSUGGESTCARD.style.display = "block";
-  // Show techniques for this belt
+  // Show techniques for a category
   TECHNIQUES.forEach((technique) => {
-    if (TECHNIQUESMAP[technique][category] == searchValue) {
+    if (searchValue != "all") {
+      if (TECHNIQUESMAP[technique][category] == searchValue) {
+        addHitToSuggestions(technique);
+      }
+    } else {
       addHitToSuggestions(technique);
     }
   });

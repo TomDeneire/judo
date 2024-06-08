@@ -26,8 +26,20 @@
   </head>
   <body>
     <div class="container mt-4">
-      <h1>Judo technieken</h1>
-      <h1>&#129355;</h1>
+      <h1
+        onclick="window.location.reload()"
+        class="list-group list-group-flush"
+        style="cursor: pointer"
+      >
+        Judo technieken
+      </h1>
+      <h1
+        onclick="window.location.reload()"
+        class="list-group list-group-flush"
+        style="cursor: pointer"
+      >
+        &#129355;
+      </h1>
       <br />
       <input
         type="text"
@@ -36,7 +48,11 @@
         placeholder="Zoek een techniek..."
       />
       <p></p>
-      <div class="card" id="autoSuggestCard" style="display: none">
+      <div
+        class="shadow p-3 mb-5 bg-body rounded"
+        id="autoSuggestCard"
+        style="display: none"
+      >
         <ul
           id="autoSuggest"
           class="list-group list-group-flush"
@@ -102,6 +118,7 @@
         <button type="button" id="strangle" class="btn btn-secondary">
           wurging
         </button>
+        <button type="button" id="all" class="btn btn-secondary">alle</button>
       </div>
     </div>
     <div class="container mt-3">
