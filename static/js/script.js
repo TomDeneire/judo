@@ -3,7 +3,6 @@
  */
 
 const resid = await fetch("techniques.json");
-// var resid = await fetch("https://tomdeneire.github.io/judo/techniques.json");
 const TECHNIQUESMAP = await resid.json();
 const TECHNIQUES = Object.keys(TECHNIQUESMAP);
 const SEARCHINPUT = document.getElementById("searchInput");

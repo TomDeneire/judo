@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RF38SQN9ED"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RF38SQN9ED");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Judo technieken</title>
+    <link rel="stylesheet" href="static/css/bootstrap.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1
+        onclick="window.open('/index.html','_self')"
+        class="list-group list-group-flush"
+        style="cursor: pointer"
+      >
+        Judo technieken
+      </h1>
+      <h1
+        onclick="window.open('/index.html','_self')"
+        class="list-group list-group-flush"
+        style="cursor: pointer"
+      >
+        &#129355; &nbsp; 柔道
+      </h1>
+      <br />
+      <input
+        type="text"
+        id="searchInput"
+        class="form-control"
+        placeholder="Zoek een techniek..."
+      />
+      <p></p>
+      <div
+        class="shadow p-3 mb-5 bg-body rounded"
+        id="autoSuggestCard"
+        style="display: none"
+      >
+        <ul
+          id="autoSuggest"
+          class="list-group list-group-flush"
+          style="cursor: pointer"
+        ></ul>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <label class="small">&nbsp;&nbsp;technieken per gordel</label>
+      <br />
+      <div
+        class="btn-group"
+        role="group"
+        aria-label="Technieken per gordel"
+        id="beltTechniques"
+      >
+        <button
+          type="button"
+          id="yellow"
+          class="btn btn-secondary"
+          style="background-color: yellow; width: 3pc; height: 2pc"
+        ></button>
+        <button
+          type="button"
+          id="orange"
+          class="btn btn-secondary"
+          style="background-color: orange; width: 3pc; height: 2pc"
+        ></button>
+        <button
+          type="button"
+          id="green"
+          class="btn btn-secondary"
+          style="background-color: green; width: 3pc; height: 2pc"
+        ></button>
+        <button
+          type="button"
+          id="blue"
+          class="btn btn-secondary"
+          style="background-color: blue; width: 3pc; height: 2pc"
+        ></button>
+        <button
+          type="button"
+          id="brown"
+          class="btn btn-secondary"
+          style="background-color: brown; width: 3pc; height: 2pc"
+        ></button>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <label class="small">&nbsp;&nbsp;technieken per soort</label>
+      <br />
+      <div
+        class="btn-group"
+        role="group"
+        aria-label="Technieken per lichaamsdeel"
+        id="categoryTechniques"
+      >
+        <button type="button" id="throw" class="btn btn-secondary">worp</button>
+        <button type="button" id="grip" class="btn btn-secondary">
+          houdgreep
+        </button>
+        <button type="button" id="clamp" class="btn btn-secondary">klem</button>
+        <button type="button" id="strangle" class="btn btn-secondary">
+          wurging
+        </button>
+        <button type="button" id="all" class="btn btn-secondary">alle</button>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <label class="small">&nbsp;&nbsp;technieken per lichaamsdeel</label>
+      <br />
+      <div
+        class="btn-group"
+        role="group"
+        aria-label="Technieken per lichaamsdeel"
+        id="bodyTechniques"
+      >
+        <button type="button" id="arm" class="btn btn-secondary">arm</button>
+        <button type="button" id="heup" class="btn btn-secondary">heup</button>
+        <button type="button" id="knie" class="btn btn-secondary">knie</button>
+        <button type="button" id="schouder" class="btn btn-secondary">
+          schouder
+        </button>
+        <button type="button" id="voet" class="btn btn-secondary">voet</button>
+      </div>
+    </div>
+    <div class="container mt-4" id="information" display="none">
+      <div class="card" id="infoCard">
+        <div class="card-body">
+          <h5 class="card-title" id="title"></h5>
+          <div
+            id="videoPlayer"
+            class="embed-responsive embed-responsive-16by9"
+            style="
+              width: 100%;
+              height: 0;
+              position: relative;
+              padding-bottom: 56.25%;
+            "
+          ></div>
+          <br />
+          <p class="text-secondary" id="translation"></p>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4" id="footer" display="block">
+      <small class="text-secondary">
+        © 2024
+        <a class="link-secondary" href="https://tomdeneire.be">
+          Tom Deneire</a
+        ></small
+      >
+    </div>
+
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/script.js" type="module"></script>
+  </body>
+</html>
