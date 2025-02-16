@@ -12,7 +12,7 @@
     "video": "https://www.youtube.com/watch?v=Hr0cOMGBDYo"
   },
   "de-ashi-harai": {
-    "belt": "brown",
+    "belt": "sienna",
     "category": "throw",
     "translation": "voorwaarts-voet-wegvegen",
     "video": "https://www.youtube.com/watch?v=4BUUvqxi_Kk"
@@ -36,7 +36,7 @@
     "video": "https://www.youtube.com/watch?v=9f0n8jez7iA"
   },
   "hane-goshi": {
-    "belt": "brown",
+    "belt": "sienna",
     "category": "throw",
     "translation": "vleugel-heup",
     "video": "https://www.youtube.com/watch?v=M9_7De6A1kk"
@@ -85,6 +85,12 @@
     "translation": "knie-wiel",
     "video": "https://www.youtube.com/watch?v=JPJx9-oAVns"
   },
+  "hiza-guruma & sasae-tsuri-komi-ashi (verschil)": {
+    "belt": "green",
+    "category": "throw",
+    "translation": "knie-wiel & dragen-ophangen-binnenwaarts-voet",
+    "video": "https://www.youtube.com/watch?v=d2vcFAJu_98"
+  },
   "ippon-seoi-nage": {
     "belt": "orange",
     "category": "throw",
@@ -128,7 +134,7 @@
     "video": "https://www.youtube.com/watch?v=7hP1-W2yovk"
   },
   "kata-guruma": {
-    "belt": "brown",
+    "belt": "sienna",
     "category": "throw",
     "translation": "schouder-rad",
     "video": "https://www.youtube.com/watch?v=cnHRhSy8yi4"
@@ -196,25 +202,25 @@
   "kuzure-kami-shiho-gatame": {
     "belt": "orange",
     "category": "grip",
-    "translation": "onder liggen-boven-vier richtingen-insluiten",
+    "translation": "gevarieerd-boven-vier richtingen-insluiten",
     "video": "https://www.youtube.com/watch?v=YUrogQWdwiY"
   },
   "kuzure-kami-shiho-gatame (ontsnappingen)": {
     "belt": "orange",
     "category": "grip",
-    "translation": "onder liggen-boven-vier richtingen-insluiten",
+    "translation": "gevarieerd-boven-vier richtingen-insluiten",
     "video": "https://www.youtube.com/watch?v=PPe7E_7d7UI"
   },
   "kuzure-kesa-gatame": {
     "belt": "yellow",
     "category": "grip",
-    "translation": "onder liggen-diagonaal-insluiten",
+    "translation": "gevarieerd-diagonaal-insluiten",
     "video": "https://www.youtube.com/watch?v=Q2fb9jaoUFQ"
   },
   "kuzure-kesa-gatame (ontsnappingen)": {
     "belt": "yellow",
     "category": "grip",
-    "translation": "onder liggen-diagonaal-insluiten",
+    "translation": "gevarieerd-diagonaal-insluiten",
     "video": "https://www.youtube.com/watch?v=-zFQ6h4yKT4"
   },
   "mae-mawari-ukemi": {
@@ -480,7 +486,7 @@
     "video": "https://www.youtube.com/watch?v=bPKwtB4lyOQ"
   },
   "uki-otoshi": {
-    "belt": "brown",
+    "belt": "sienna",
     "category": "throw",
     "translation": "zweven-laten vallen",
     "video": "https://www.youtube.com/watch?v=6H5tmncOY4Q"

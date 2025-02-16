@@ -1,193 +1,168 @@
-/**
- * CONSTANTS
- */
+let techniques = {};
 
-const resid = await fetch("techniques.json");
-const TECHNIQUESMAP = await resid.json();
-const TECHNIQUES = Object.keys(TECHNIQUESMAP);
-const SEARCHINPUT = document.getElementById("searchInput");
-const AUTOSUGGESTCARD = document.getElementById("autoSuggestCard");
-const AUTOSUGGEST = document.getElementById("autoSuggest");
-const VIDEOPLAYER = document.getElementById("videoPlayer");
-const INFORMATION = document.getElementById("information");
-const TITLE = document.getElementById("title");
-const TRANSLATION = document.getElementById("translation");
-const INFOCARD = document.getElementById("infoCard");
-
-/**
- * HELPER FUNCTIONS
- */
-
-/**
- * Clear screen
- */
-function clearScreen() {
-  VIDEOPLAYER.innerHTML = "";
-  AUTOSUGGESTCARD.style.display = "none";
-  AUTOSUGGEST.innerHTML = "";
-  TITLE.innerHTML = "";
-  TRANSLATION.innerHTML = "";
-  INFORMATION.style.display = "none";
-}
-
-/**
- * Extract video ID from YouTube URL
- */
-function getVideoId(url) {
-  // Extract video ID from YouTube URL
-  const match = url.match(/v=([^&]+)/);
-  return match ? match[1] : "";
-}
-
-/**
- * Add event listener to auto-suggest list
- */
-function addEvent(element) {
-  element.addEventListener("click", function () {
-    const input = document.getElementById("searchInput");
-    input.value = element.technique;
-    clearScreen();
-    searchEvent(false);
-  });
-}
-
-const backgroundColors = {
-  yellow: "lightyellow",
-  green: "lightgreen",
-  orange: "orange",
-  blue: "lightblue",
-  brown: "sienna",
-  "": "lightgrey",
-};
-
-/**
- * Add hit to suggestions
- */
-function addHitToSuggestions(technique, input) {
-  const li = document.createElement("li");
-  li.classList.add("list-group-item");
-  li.id = technique;
-  li.innerHTML =
-    technique.replace(input, `<b>${input}</b>`) +
-    ` <label class="small">(${TECHNIQUESMAP[technique]["translation"]})</label>`;
-  li.technique = technique;
-  li.style.backgroundColor = backgroundColors[TECHNIQUESMAP[technique]["belt"]];
-  addEvent(li);
-  AUTOSUGGEST.appendChild(li);
-}
-
-/**
- * Show video technique
- */
-function showTechnique(technique) {
-  TITLE.innerHTML = technique;
-  const videoUrl = TECHNIQUESMAP[technique]["video"];
-  const embedUrl = `https://www.youtube.com/embed/${getVideoId(videoUrl)}?autoplay=1&mute=1`;
-  VIDEOPLAYER.innerHTML = `<iframe class="embed-responsive-item" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="${embedUrl}" allowfullscreen></iframe>`;
-  const translatedTechnique = TECHNIQUESMAP[technique]["translation"];
-  if (translatedTechnique != "") {
-    TRANSLATION.innerHTML = `"${technique}" = "${TECHNIQUESMAP[technique]["translation"]}"`;
-  }
-  INFOCARD.style.borderWidth = "0.4pc";
-  INFOCARD.style.borderColor = TECHNIQUESMAP[technique]["belt"];
-  INFORMATION.style.display = "block";
-}
-
-/**
- * SEARCH FUNCTIONS
- */
-
-/**
- * Search by input
- */
-function searchEvent(suggest) {
-  const technique = SEARCHINPUT.value.trim().toLowerCase();
-
-  // Show technique if hit
-  if (TECHNIQUESMAP.hasOwnProperty(technique)) {
-    showTechnique(technique);
-  } else {
-    clearScreen();
-  }
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  AUTOSUGGEST.innerHTML = ""; // Clear previous suggestions
-
-  // Search technique
-  if (suggest) {
-    if (technique.length < 0) {
-      return;
+// Async function to load techniques
+async function loadTechniques() {
+  try {
+    const response = await fetch("techniques.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    TECHNIQUES.forEach((technique) => {
-      const hit =
-        technique.includes(input) ||
-        technique.includes(input.replace("katame", "gatame")) ||
-        TECHNIQUESMAP[technique]["translation"].includes(input);
-      if (hit) {
-        if ((AUTOSUGGESTCARD.style.display = "none")) {
-          AUTOSUGGESTCARD.style.display = "block";
-        }
-        addHitToSuggestions(technique, input);
-      }
-    });
+    techniques = await response.json();
+    return true;
+  } catch (error) {
+    console.error("Error loading techniques:", error);
+    techniquesList.innerHTML = `
+                    <div class="error">
+                        Failed to load techniques. Please try again later.
+                    </div>
+                `;
+    return false;
   }
 }
 
-/**
- * Search by input
- */
-function searchCategory(searchValue, category) {
-  clearScreen();
-  AUTOSUGGESTCARD.style.display = "block";
-  // Show techniques for a category
-  TECHNIQUES.forEach((technique) => {
-    if (searchValue != "all") {
-      if (TECHNIQUESMAP[technique][category] == searchValue) {
-        addHitToSuggestions(technique);
-      }
-    } else {
-      addHitToSuggestions(technique);
-    }
-  });
+const searchView = document.getElementById("searchView");
+const detailsView = document.getElementById("detailsView");
+const searchInput = document.getElementById("searchInput");
+const techniquesList = document.getElementById("techniquesList");
+const techniqueDetails = document.getElementById("techniqueDetails");
+
+function showSearchView() {
+  detailsView.style.display = "none";
+  searchView.style.display = "block";
+  history.pushState({ view: "search" }, "", "/");
 }
 
-/*
-EVENT LISTENERS
-*/
+function showDetailsView(techniqueName) {
+  const technique = techniques[techniqueName];
+  if (!technique) return;
 
-SEARCHINPUT.addEventListener("input", function () {
-  searchEvent(true);
+  const videoId = technique.video.split("v=")[1];
+
+  techniqueDetails.innerHTML = `
+                <h2 class="technique-name">${techniqueName}</h2>
+                <div class="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/${videoId}"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <div class="details-content" style="border: 3px solid ${technique.belt}">
+                    <p><strong>Categorie:</strong> ${technique.category}</p>
+                    <p><strong>Vertaling:</strong> ${technique.translation}</p>
+                    <p><strong>Gordel:</strong> ${technique.belt}</p>
+                </div>
+            `;
+
+  searchView.style.display = "none";
+  detailsView.style.display = "block";
+  history.pushState(
+    { view: "details", technique: techniqueName },
+    "",
+    `#${techniqueName}`,
+  );
+}
+
+function filterTechniques(searchText, mode) {
+  if (mode === "") {
+    mode = "text";
+  }
+  let filtered = {};
+  if (mode === "text") {
+    filtered = Object.entries(techniques).filter(([name]) =>
+      name.toLowerCase().includes(searchText.toLowerCase()),
+    );
+  } else if (mode === "belt") {
+    filtered = Object.entries(techniques).filter(([_, technique]) =>
+      technique.belt.toLowerCase().includes(searchText.toLowerCase()),
+    );
+  }
+
+  if (filtered.length === 0) {
+    techniquesList.innerHTML = `
+                    <div class="no-results">
+                        Geen technieken gevonden met "${searchText}"
+                    </div>
+                `;
+    return;
+  }
+
+  techniquesList.innerHTML = filtered
+    .map(
+      ([name, details]) => `
+                    <button class="technique-card" data-technique="${name}" style="background-color: ${details.belt || "#f0f0f0"}">
+                        <div class="technique-name">${name}</div>
+                        <div class="technique-translation">${details.translation}</div>
+                    </button>
+                `,
+    )
+    .join("");
+}
+
+// Event Listeners
+searchInput.addEventListener("input", (e) =>
+  filterTechniques(e.target.value, "text"),
+);
+
+techniquesList.addEventListener("click", (e) => {
+  const card = e.target.closest(".technique-card");
+  if (card) {
+    const technique = card.dataset.technique;
+    showDetailsView(technique);
+  }
 });
 
 document
-  .getElementById("beltTechniques")
-  .querySelectorAll("button")
-  .forEach((button) => {
-    button.addEventListener("click", function () {
-      searchCategory(button.id, "belt");
-    });
+  .querySelector(".back-button")
+  .addEventListener("click", showSearchView);
+
+window.addEventListener("popstate", (e) => {
+  if (e.state?.view === "details") {
+    showDetailsView(e.state.technique);
+  } else {
+    showSearchView();
+  }
+});
+
+// Async initialization
+async function initializeApp() {
+  // Disable search while loading
+  searchInput.disabled = true;
+
+  // Load techniques
+  const success = await loadTechniques();
+
+  if (success) {
+    // Enable search
+    searchInput.disabled = false;
+
+    // Initialize the view
+    filterTechniques("", "text");
+
+    // Check if we should show a specific technique (from URL hash)
+    const techniqueName = window.location.hash.slice(1);
+    if (techniqueName && techniques[techniqueName]) {
+      showDetailsView(techniqueName);
+    }
+  }
+}
+
+let currentBeltFilter = "";
+
+// Add event listeners to belt filters
+document.querySelectorAll(".belt-filter").forEach((button) => {
+  button.addEventListener("click", (e) => {
+    // Remove active class from all buttons
+    document
+      .querySelectorAll(".belt-filter")
+      .forEach((btn) => btn.classList.remove("active"));
+    // Add active class to clicked button
+    e.target.classList.add("active");
+
+    currentBeltFilter = e.target.dataset.belt;
+    filterTechniques(currentBeltFilter, "belt");
   });
+});
 
-document
-  .getElementById("categoryTechniques")
-  .querySelectorAll("button")
-  .forEach((button) => {
-    button.addEventListener("click", function () {
-      searchCategory(button.id, "category");
-    });
-  });
-
-document
-  .getElementById("bodyTechniques")
-  .querySelectorAll("button")
-  .forEach((button) => {
-    button.addEventListener("click", function () {
-      SEARCHINPUT.value = button.id;
-      searchEvent(true);
-    });
-  });
-
-/*
-MAIN
-*/
-
-clearScreen();
+// Start the app
+initializeApp();

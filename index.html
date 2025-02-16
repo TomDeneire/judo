@@ -5,25 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Judo technieken</title>
     <link rel="stylesheet" href="static/css/bootstrap.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
-    <script type="text/javascript">
-      // Hack to make the back button on /search.html behave as expected
-      function preventBack() {
-        window.history.forward();
-      }
-      setTimeout("preventBack()", 0);
-      window.onunload = function () {
-        null;
-      };
-      window.onload = function () {
-        window.open("search.html", "_self");
-      };
-    </script>
   </head>
   <body>
+    <div class="container">
+      <h1
+        onclick="window.open('/index.html','_self')"
+        class="list-group list-group-flush"
+        style="cursor: pointer"
+      >
+        Judo technieken
+      </h1>
+      <h1
+        onclick="window.open('/index.html','_self')"
+        class="list-group list-group-flush"
+        style="cursor: pointer"
+      >
+        &#129355; &nbsp; 柔道
+      </h1>
+      <p></p>
+      <div class="belt-filters">
+        <button
+          class="belt-filter"
+          data-belt="yellow"
+          style="background-color: yellow"
+        >
+          &nbsp;
+        </button>
+        <button
+          class="belt-filter"
+          data-belt="orange"
+          style="background-color: orange"
+        >
+          &nbsp;
+        </button>
+        <button
+          class="belt-filter"
+          data-belt="green"
+          style="background-color: green; color: white"
+        >
+          &nbsp;
+        </button>
+        <button
+          class="belt-filter"
+          data-belt="blue"
+          style="background-color: blue; color: white"
+        >
+          &nbsp;
+        </button>
+        <button
+          class="belt-filter"
+          data-belt="brown"
+          style="background-color: brown; color: white"
+        >
+          &nbsp;
+        </button>
+      </div>
+      <div id="searchView">
+        <div class="search-container">
+          <svg
+            class="search-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Zoek technieken..."
+          />
+        </div>
+        <div id="techniquesList" class="technique-list"></div>
+      </div>
+
+      <div id="detailsView" class="technique-details">
+        <button class="back-button">← Terug</button>
+        <div id="techniqueDetails"></div>
+      </div>
+    </div>
     <script src="static/js/bootstrap.js"></script>
     <script src="static/js/script.js" type="module"></script>
   </body>
