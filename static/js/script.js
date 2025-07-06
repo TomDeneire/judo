@@ -1,35 +1,31 @@
 let techniques = {};
 
-// Async function to load techniques
-async function loadTechniques() {
-  try {
-    const response = await fetch("techniques.json");
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    techniques = await response.json();
-    return true;
-  } catch (error) {
-    console.error("Error loading techniques:", error);
-    techniquesList.innerHTML = `
-                    <div class="error">
-                        Failed to load techniques. Please try again later.
-                    </div>
-                `;
-    return false;
-  }
-}
-
 const searchView = document.getElementById("searchView");
 const detailsView = document.getElementById("detailsView");
 const searchInput = document.getElementById("searchInput");
 const techniquesList = document.getElementById("techniquesList");
 const techniqueDetails = document.getElementById("techniqueDetails");
 
+// Load techniques from JSON
+async function loadTechniques() {
+  try {
+    const response = await fetch("techniques.json");
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    techniques = await response.json();
+    return true;
+  } catch (error) {
+    console.error("Error loading techniques:", error);
+    techniquesList.innerHTML = `<div class="error">Failed to load techniques. Please try again later.</div>`;
+    return false;
+  }
+}
+
 function showSearchView() {
   detailsView.style.display = "none";
   searchView.style.display = "block";
-  history.pushState({ view: "search" }, "", "/");
+
+  // Fix: Avoid navigating to root "/"
+  history.pushState({ view: "search" }, "", location.pathname);
 }
 
 function showDetailsView(techniqueName) {
@@ -39,23 +35,24 @@ function showDetailsView(techniqueName) {
   const videoId = technique.video.split("v=")[1];
 
   techniqueDetails.innerHTML = `
-                <h2 class="technique-name">${techniqueName}</h2>
-                <div class="video-container">
-                    <iframe
-                        src="https://www.youtube.com/embed/${videoId}"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                    ></iframe>
-                </div>
-                <div class="details-content" style="border: 3px solid ${technique.belt}">
-                    <p><strong>Categorie:</strong> ${technique.category}</p>
-                    <p><strong>Vertaling:</strong> ${technique.translation}</p>
-                    <p><strong>Gordel:</strong> ${technique.belt}</p>
-                </div>
-            `;
+    <h2 class="technique-name">${techniqueName}</h2>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/${videoId}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="details-content" style="border: 3px solid ${technique.belt}">
+      <p><strong>Categorie:</strong> ${technique.category}</p>
+      <p><strong>Vertaling:</strong> ${technique.translation}</p>
+      <p><strong>Gordel:</strong> ${technique.belt}</p>
+    </div>
+  `;
 
   searchView.style.display = "none";
   detailsView.style.display = "block";
+
   history.pushState(
     { view: "details", technique: techniqueName },
     "",
@@ -63,11 +60,9 @@ function showDetailsView(techniqueName) {
   );
 }
 
-function filterTechniques(searchText, mode) {
-  if (mode === "") {
-    mode = "text";
-  }
-  let filtered = {};
+function filterTechniques(searchText, mode = "text") {
+  let filtered = [];
+
   if (mode === "text") {
     filtered = Object.entries(techniques).filter(([name]) =>
       name.toLowerCase().includes(searchText.toLowerCase()),
@@ -79,27 +74,23 @@ function filterTechniques(searchText, mode) {
   }
 
   if (filtered.length === 0) {
-    techniquesList.innerHTML = `
-                    <div class="no-results">
-                        Geen technieken gevonden met "${searchText}"
-                    </div>
-                `;
+    techniquesList.innerHTML = `<div class="no-results">Geen technieken gevonden met "${searchText}"</div>`;
     return;
   }
 
   techniquesList.innerHTML = filtered
     .map(
       ([name, details]) => `
-                    <button class="technique-card" data-technique="${name}" style="background-color: ${details.belt || "#f0f0f0"}">
-                        <div class="technique-name">${name}</div>
-                        <div class="technique-translation">${details.translation}</div>
-                    </button>
-                `,
+      <button class="technique-card" data-technique="${name}" style="background-color: ${details.belt || "#f0f0f0"}">
+        <div class="technique-name">${name}</div>
+        <div class="technique-translation">${details.translation}</div>
+      </button>
+    `,
     )
     .join("");
 }
 
-// Event Listeners
+// Event listeners
 searchInput.addEventListener("input", (e) =>
   filterTechniques(e.target.value, "text"),
 );
@@ -114,7 +105,7 @@ techniquesList.addEventListener("click", (e) => {
 
 document
   .querySelector(".back-button")
-  .addEventListener("click", showSearchView);
+  .addEventListener("click", () => window.history.back());
 
 window.addEventListener("popstate", (e) => {
   if (e.state?.view === "details") {
@@ -124,45 +115,41 @@ window.addEventListener("popstate", (e) => {
   }
 });
 
-// Async initialization
+// Belt filter
+document.querySelectorAll(".belt-filter").forEach((button) => {
+  button.addEventListener("click", (e) => {
+    document
+      .querySelectorAll(".belt-filter")
+      .forEach((btn) => btn.classList.remove("active"));
+    e.target.classList.add("active");
+
+    const belt = e.target.dataset.belt;
+    filterTechniques(belt, "belt");
+  });
+});
+
+// Init app
 async function initializeApp() {
-  // Disable search while loading
   searchInput.disabled = true;
 
-  // Load techniques
   const success = await loadTechniques();
 
   if (success) {
-    // Enable search
     searchInput.disabled = false;
-
-    // Initialize the view
     filterTechniques("", "text");
 
-    // Check if we should show a specific technique (from URL hash)
     const techniqueName = window.location.hash.slice(1);
-    if (techniqueName && techniques[techniqueName]) {
-      showDetailsView(techniqueName);
+    if (techniqueName) {
+      const waitForTechnique = () => {
+        if (techniques[techniqueName]) {
+          showDetailsView(techniqueName);
+        } else {
+          setTimeout(waitForTechnique, 100);
+        }
+      };
+      waitForTechnique();
     }
   }
 }
 
-let currentBeltFilter = "";
-
-// Add event listeners to belt filters
-document.querySelectorAll(".belt-filter").forEach((button) => {
-  button.addEventListener("click", (e) => {
-    // Remove active class from all buttons
-    document
-      .querySelectorAll(".belt-filter")
-      .forEach((btn) => btn.classList.remove("active"));
-    // Add active class to clicked button
-    e.target.classList.add("active");
-
-    currentBeltFilter = e.target.dataset.belt;
-    filterTechniques(currentBeltFilter, "belt");
-  });
-});
-
-// Start the app
 initializeApp();
