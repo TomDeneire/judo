@@ -12,7 +12,7 @@
     "video": "https://www.youtube.com/watch?v=Hr0cOMGBDYo"
   },
   "de-ashi-harai": {
-    "belt": "sienna",
+    "belt": "orange",
     "category": "throw",
     "translation": "voorwaarts-voet-wegvegen",
     "video": "https://www.youtube.com/watch?v=4BUUvqxi_Kk"
@@ -29,8 +29,8 @@
     "translation": "verdraaid-gekruist-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=t3tQriIPdlI"
   },
-  "hadaka-eri-jime": {
-    "belt": "",
+  "hadaka-jime": {
+    "belt": "blue",
     "category": "strangle",
     "translation": "bloot-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=9f0n8jez7iA"
@@ -54,7 +54,7 @@
     "video": "https://www.youtube.com/watch?v=6CRBGLGz9j8"
   },
   "harai-goshi": {
-    "belt": "green",
+    "belt": "blue",
     "bodypart": "hip",
     "category": "throw",
     "reference": "",
@@ -80,7 +80,7 @@
     "video": "https://www.youtube.com/watch?v=92zUYWBp5N8"
   },
   "hiza-guruma": {
-    "belt": "orange",
+    "belt": "green",
     "category": "throw",
     "translation": "knie-wiel",
     "video": "https://www.youtube.com/watch?v=JPJx9-oAVns"
@@ -139,6 +139,12 @@
     "translation": "schouder-rad",
     "video": "https://www.youtube.com/watch?v=cnHRhSy8yi4"
   },
+  "tomoe-nage": {
+    "belt": "sienna",
+    "category": "throw",
+    "translation": "cirkel-gooi",
+    "video": "https://www.youtube.com/watch?v=880WbHvHv6A"
+  },
   "kata-juji-jime": {
     "belt": "green",
     "category": "strangle",
@@ -146,13 +152,13 @@
     "video": "https://www.youtube.com/watch?v=3VZVUAmiMD8"
   },
   "kataha-jime": {
-    "belt": "",
+    "belt": "blue",
     "category": "strangle",
     "translation": "enkele vleugel-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=yaTGgRjnwB8"
   },
   "katate-jime": {
-    "belt": "",
+    "belt": "sienna",
     "category": "strangle",
     "translation": "vormhand-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=cHeIs-fSqwE"
@@ -176,7 +182,7 @@
     "video": "https://www.youtube.com/watch?v=5_TS0YHdxcQ"
   },
   "ko-soto-gari": {
-    "belt": "green",
+    "belt": "brown",
     "category": "throw",
     "translation": "klein-buitenkant-maaien",
     "video": "https://www.youtube.com/watch?v=jeQ541ScLB4"
@@ -194,31 +200,31 @@
     "video": "https://www.youtube.com/watch?v=_1eygIXLD_w"
   },
   "koshi-guruma": {
-    "belt": "yellow",
+    "belt": "orange",
     "category": "throw",
     "translation": "heup-wiel",
     "video": "https://www.youtube.com/watch?v=SU7Id6uVJ44"
   },
   "kuzure-kami-shiho-gatame": {
-    "belt": "orange",
+    "belt": "green",
     "category": "grip",
     "translation": "gevarieerd-boven-vier richtingen-insluiten",
     "video": "https://www.youtube.com/watch?v=YUrogQWdwiY"
   },
   "kuzure-kami-shiho-gatame (ontsnappingen)": {
-    "belt": "orange",
+    "belt": "green",
     "category": "grip",
     "translation": "gevarieerd-boven-vier richtingen-insluiten",
     "video": "https://www.youtube.com/watch?v=PPe7E_7d7UI"
   },
   "kuzure-kesa-gatame": {
-    "belt": "yellow",
+    "belt": "orange",
     "category": "grip",
     "translation": "gevarieerd-diagonaal-insluiten",
     "video": "https://www.youtube.com/watch?v=Q2fb9jaoUFQ"
   },
   "kuzure-kesa-gatame (ontsnappingen)": {
-    "belt": "yellow",
+    "belt": "orange",
     "category": "grip",
     "translation": "gevarieerd-diagonaal-insluiten",
     "video": "https://www.youtube.com/watch?v=-zFQ6h4yKT4"
@@ -258,7 +264,7 @@
     "video": "https://www.youtube.com/watch?v=k2cHry9HByQ"
   },
   "o-goshi": {
-    "belt": "orange",
+    "belt": "yellow",
     "category": "throw",
     "translation": "groot-heup",
     "video": "https://www.youtube.com/watch?v=yhu1mfy2vJ4"
@@ -276,19 +282,19 @@
     "video": "https://www.youtube.com/watch?v=DGDv2oMwmas"
   },
   "o-uchi-gari": {
-    "belt": "yellow",
+    "belt": "blue",
     "category": "throw",
     "translation": "groot-binnenkant-maaien",
     "video": "https://www.youtube.com/watch?v=0itJFhV9pDQ"
   },
   "okuri-ashi-harai": {
-    "belt": "blue",
+    "belt": "sienna",
     "category": "throw",
     "translation": "beide benen-voet-wegvegen",
     "video": "https://www.youtube.com/watch?v=nw1ZdRjrdRI"
   },
   "okuri-eri-jime": {
-    "belt": "",
+    "belt": "blue",
     "category": "strangle",
     "translation": "sturen-kraag-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=EiqyoVcIAi8"
@@ -300,13 +306,13 @@
     "video": "https://www.youtube.com/watch?v=BBZG9N4cW0U"
   },
   "ryote-jime": {
-    "belt": "",
+    "belt": "sienna",
     "category": "strangle",
     "translation": "tweehand-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=-RHC4V7TQiY"
   },
   "sankaku-jime": {
-    "belt": "",
+    "belt": "sienna",
     "category": "strangle",
     "translation": "driehoek-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=lq1CUBRAm7s"
@@ -318,7 +324,7 @@
     "video": "https://www.youtube.com/watch?v=699i--pvYmE"
   },
   "seoi-nage": {
-    "belt": "orange",
+    "belt": "yellow",
     "category": "throw",
     "translation": "dragen op schouder-werpen",
     "video": "https://www.youtube.com/watch?v=zIq0xI0ogxk"
@@ -342,13 +348,13 @@
     "video": "https://www.youtube.com/watch?v=bWG9O1BVKtQ"
   },
   "sumi-gaeshi": {
-    "belt": "",
+    "belt": "blue",
     "category": "throw",
     "translation": "hoek-tegenaanval",
     "video": "https://www.youtube.com/watch?v=5VhduA5xkbA"
   },
   "tai-otoshi": {
-    "belt": "blue",
+    "belt": "green",
     "category": "throw",
     "translation": "lichaam-laten vallen",
     "video": "https://www.youtube.com/watch?v=4x6S3Q-Ktv8"
@@ -396,7 +402,7 @@
     "video": "https://www.youtube.com/watch?v=5BowcjduxVc"
   },
   "uchi-mata": {
-    "belt": "blue",
+    "belt": "green",
     "category": "throw",
     "translation": "binnenkant-dij",
     "video": "https://www.youtube.com/watch?v=iUpSu5J-bgw"
@@ -480,7 +486,7 @@
     "video": "https://www.youtube.com/watch?v=AMHWDFR4ryo"
   },
   "uki-goshi": {
-    "belt": "yellow",
+    "belt": "orange",
     "category": "throw",
     "translation": "zweven-heup",
     "video": "https://www.youtube.com/watch?v=bPKwtB4lyOQ"
