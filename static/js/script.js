@@ -62,7 +62,7 @@ function showDetailsView(techniqueName) {
     <div class="details-content" style="border: 3px solid ${technique.belt}; padding: 16px;">
       <p><strong>Categorie:</strong> ${categoryTranslations[technique.category]}</p>
       <p><strong>Vertaling:</strong> ${technique.translation}</p>
-      <p><strong>Gordel:</strong> ${beltTranslations[technique.belt]}</p>
+      <p><strong>Gordel:</strong> ${beltTranslations[technique.belt] ?? ""}</p>
     </div>
   `;
 
