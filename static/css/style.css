@@ -1,9 +1,11 @@
+/* Algemene reset en box-model */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Basis body styling */
 body {
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -12,6 +14,7 @@ body {
   padding: 20px;
 }
 
+/* Container voor de volledige app */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -54,6 +57,7 @@ body {
 }
 
 .belt-filter.active {
+  /* Style voor geselecteerde filter kan hier */
 }
 
 /* Search Field */
@@ -146,6 +150,7 @@ body {
   padding-top: 1rem;
 }
 
+/* YouTube embed styling */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -161,6 +166,7 @@ body {
   border: none;
 }
 
+/* Detail content (techniek info) */
 .details-content {
   margin-top: 20px;
   border-radius: 6px;
@@ -175,6 +181,45 @@ body {
   margin-right: 8px;
 }
 
+/* Nieuwe stijlen voor detail-informatie als grid */
+.details-content.border {
+  border: 3px solid; /* Kleur wordt inline meegegeven */
+  padding: 16px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+/* Custom row/col systeem */
+.details-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.details-row.bg-light {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+.details-label {
+  flex: 0 0 25%;
+  max-width: 25%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+
+.details-value {
+  flex: 0 0 75%;
+  max-width: 75%;
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+
 /* No Results */
 .no-results {
   text-align: center;
@@ -182,7 +227,27 @@ body {
   padding: 20px;
 }
 
-/* Responsive Adjustments (optional) */
+/* Responsieve details layout */
+@media (max-width: 768px) {
+  .details-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details-label,
+  .details-value {
+    max-width: 100%;
+    flex-basis: 100%;
+    padding-left: 0;
+    margin-bottom: 4px;
+  }
+
+  .details-value {
+    margin-bottom: 12px;
+  }
+}
+
+/* Extra responsive tweaks */
 @media (max-width: 480px) {
   .clickable-title {
     font-size: 1.5rem;

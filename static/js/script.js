@@ -51,20 +51,41 @@ function showDetailsView(techniqueName) {
   const videoId = technique.video.split("v=")[1];
 
   techniqueDetails.innerHTML = `
-    <h2 class="technique-name">${techniqueName}</h2>
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/${videoId}"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+  <h2 class="technique-name">${techniqueName}</h2>
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/${videoId}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="details-content border" style="border-color: ${technique.belt};">
+    <div class="details-row">
+      <div class="details-label">
+        <span>&#128193;</span> Categorie
+      </div>
+      <div class="details-value">
+        ${categoryTranslations[technique.category]}
+      </div>
     </div>
-    <div class="details-content" style="border: 3px solid ${technique.belt}; padding: 16px;">
-      <p><strong>Categorie:</strong> ${categoryTranslations[technique.category]}</p>
-      <p><strong>Vertaling:</strong> ${technique.translation}</p>
-      <p><strong>Gordel:</strong> ${beltTranslations[technique.belt] ?? ""}</p>
+    <div class="details-row bg-light">
+      <div class="details-label">
+        <span>&#128221;</span> Vertaling
+      </div>
+      <div class="details-value">
+        ${technique.translation}
+      </div>
     </div>
-  `;
+    <div class="details-row">
+      <div class="details-label">
+        <span>&#127942;</span> Gordel
+      </div>
+      <div class="details-value">
+        ${beltTranslations[technique.belt] ?? ""}
+      </div>
+    </div>
+  </div>
+`;
 
   searchView.style.display = "none";
   detailsView.style.display = "block";
