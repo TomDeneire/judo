@@ -29,6 +29,22 @@ function showSearchView() {
 }
 
 function showDetailsView(techniqueName) {
+  const beltTranslations = {
+    white: "Wit",
+    yellow: "Geel",
+    orange: "Oranje",
+    green: "Groen",
+    blue: "Blauw",
+    sienna: "Bruin",
+    black: "Zwart",
+  };
+  const categoryTranslations = {
+    throw: "Worp",
+    grip: "Houdgreep",
+    strangle: "Wurging",
+    clamp: "Klem",
+    protocol: "Afspraak",
+  };
   const technique = techniques[techniqueName];
   if (!technique) return;
 
@@ -43,10 +59,10 @@ function showDetailsView(techniqueName) {
         allowfullscreen
       ></iframe>
     </div>
-    <div class="details-content" style="border: 3px solid ${technique.belt}">
-      <p><strong>Categorie:</strong> ${technique.category}</p>
+    <div class="details-content" style="border: 3px solid ${technique.belt}; padding: 16px;">
+      <p><strong>Categorie:</strong> ${categoryTranslations[technique.category]}</p>
       <p><strong>Vertaling:</strong> ${technique.translation}</p>
-      <p><strong>Gordel:</strong> ${technique.belt}</p>
+      <p><strong>Gordel:</strong> ${beltTranslations[technique.belt]}</p>
     </div>
   `;
 
@@ -79,14 +95,21 @@ function filterTechniques(searchText, mode = "text") {
   }
 
   techniquesList.innerHTML = filtered
-    .map(
-      ([name, details]) => `
-      <button class="technique-card" data-technique="${name}" style="background-color: ${details.belt || "#f0f0f0"}">
+    .map(([name, details]) => {
+      const borderColor = details.belt || "#ccc";
+      const textColor = "#333";
+
+      return `
+      <button
+        class="technique-card"
+        data-technique="${name}"
+        style="border-color: ${borderColor}; color: ${textColor};"
+      >
         <div class="technique-name">${name}</div>
         <div class="technique-translation">${details.translation}</div>
       </button>
-    `,
-    )
+    `;
+    })
     .join("");
 }
 

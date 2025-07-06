@@ -10,91 +10,79 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-    <div class="container">
-      <h1
-        onclick="location.href = './'"
-        class="list-group list-group-flush"
-        style="cursor: pointer"
-      >
-        Judo technieken
-      </h1>
-      <h1
-        onclick="location.href = './'"
-        class="list-group list-group-flush"
-        style="cursor: pointer"
-      >
-        &#129355; &nbsp; 柔道
-      </h1>
-      <p></p>
-      <div class="belt-filters">
+    <div class="container py-4">
+      <header>
+        <h1 class="clickable-title" onclick="location.href = './'">
+          🥋 Judo technieken – 柔道
+        </h1>
+      </header>
+
+      <section class="belt-filters">
         <button
           class="belt-filter"
           data-belt="yellow"
           style="background-color: yellow"
-        >
-          &nbsp;
-        </button>
+        ></button>
         <button
           class="belt-filter"
           data-belt="orange"
           style="background-color: orange"
-        >
-          &nbsp;
-        </button>
+        ></button>
         <button
           class="belt-filter"
           data-belt="green"
           style="background-color: green; color: white"
-        >
-          &nbsp;
-        </button>
+        ></button>
         <button
           class="belt-filter"
           data-belt="blue"
           style="background-color: blue; color: white"
-        >
-          &nbsp;
-        </button>
+        ></button>
         <button
           class="belt-filter"
-          data-belt="brown"
-          style="background-color: brown; color: white"
-        >
-          &nbsp;
-        </button>
-      </div>
-      <div id="searchView">
-        <div class="search-container">
-          <svg
-            class="search-icon"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input
-            type="search"
-            id="searchInput"
-            placeholder="Zoek technieken..."
-          />
-        </div>
-        <div id="techniquesList" class="technique-list"></div>
-      </div>
+          data-belt="sienna"
+          style="background-color: sienna; color: white"
+        ></button>
+      </section>
 
-      <div id="detailsView" class="technique-details">
-        <button class="back-button">← Terug</button>
-        <div id="techniqueDetails"></div>
-      </div>
+      <main>
+        <div id="searchView">
+          <div class="search-container">
+            <svg
+              class="search-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Zoek technieken..."
+              aria-label="Zoek technieken"
+            />
+          </div>
+
+          <div id="techniquesList" class="technique-list"></div>
+        </div>
+
+        <div id="detailsView" class="technique-details">
+          <button class="back-button">← Terug</button>
+          <div id="techniqueDetails"></div>
+        </div>
+      </main>
     </div>
+
     <script src="static/js/bootstrap.js"></script>
     <script src="static/js/script.js" type="module"></script>
   </body>
