@@ -5,6 +5,7 @@ const detailsView = document.getElementById("detailsView");
 const searchInput = document.getElementById("searchInput");
 const techniquesList = document.getElementById("techniquesList");
 const techniqueDetails = document.getElementById("techniqueDetails");
+const beltFilters = document.getElementById("beltFilters");
 
 // Load techniques from JSON
 async function loadTechniques() {
@@ -23,12 +24,14 @@ async function loadTechniques() {
 function showSearchView() {
   detailsView.style.display = "none";
   searchView.style.display = "block";
+  beltFilters.style.display = "flex";
 
   // Fix: Avoid navigating to root "/"
   history.pushState({ view: "search" }, "", location.pathname);
 }
 
 function showDetailsView(techniqueName) {
+  beltFilters.style.display = "none";
   const beltTranslations = {
     white: "Wit",
     yellow: "Geel",
