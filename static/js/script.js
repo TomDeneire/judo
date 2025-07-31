@@ -114,6 +114,13 @@ function filterTechniques(searchText, mode = "text") {
     filtered = Object.entries(techniques).filter(([_, technique]) =>
       technique.belt.toLowerCase().includes(searchText.toLowerCase()),
     );
+  } else if (mode === "category") {
+    filtered = Object.entries(techniques).filter(
+      ([_, technique]) =>
+        technique.category === searchText &&
+        technique.belt &&
+        technique.belt.trim() !== "",
+    );
   } else if (mode === "init") {
     // Bij eerste laden: alleen technieken met ingevulde belt
     filtered = Object.entries(techniques).filter(
@@ -180,6 +187,19 @@ document.querySelectorAll(".belt-filter").forEach((button) => {
 
     const belt = e.target.dataset.belt;
     filterTechniques(belt, "belt");
+  });
+});
+
+// Category filter
+document.querySelectorAll(".category-filter").forEach((button) => {
+  button.addEventListener("click", (e) => {
+    document
+      .querySelectorAll(".category-filter")
+      .forEach((btn) => btn.classList.remove("active"));
+    e.target.classList.add("active");
+
+    const category = e.target.dataset.category;
+    filterTechniques(category, "category");
   });
 });
 

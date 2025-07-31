@@ -276,3 +276,31 @@ body {
   margin-bottom: 8px;
   object-fit: contain;
 }
+
+.category-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-filter {
+  padding: 6px 6px;
+  font-size: 14px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.category-filter:hover {
+  background-color: #ddd;
+}
+
+.category-filter.active {
+  outline: 2px solid #444;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+}
