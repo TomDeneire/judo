@@ -25,13 +25,12 @@ function showSearchView() {
   detailsView.style.display = "none";
   searchView.style.display = "block";
   beltFilters.style.display = "flex";
-
-  // Fix: Avoid navigating to root "/"
   history.pushState({ view: "search" }, "", location.pathname);
 }
 
 function showDetailsView(techniqueName) {
   beltFilters.style.display = "none";
+
   const beltTranslations = {
     white: "Wit",
     yellow: "Geel",
@@ -48,47 +47,48 @@ function showDetailsView(techniqueName) {
     clamp: "Klem",
     protocol: "Afspraak",
   };
+
   const technique = techniques[techniqueName];
   if (!technique) return;
 
   const videoId = technique.video.split("v=")[1];
 
   techniqueDetails.innerHTML = `
-  <h2 class="technique-name">${techniqueName}</h2>
-  <div class="video-container">
-    <iframe
-      src="https://www.youtube.com/embed/${videoId}"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
-  <div class="details-content border" style="border-color: ${technique.belt};">
-    <div class="details-row">
-      <div class="details-label">
-        <span>&#128193;</span> Categorie
+    <h2 class="technique-name">${techniqueName}</h2>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/${videoId}"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="details-content border" style="border-color: ${technique.belt || "#ccc"};">
+      <div class="details-row">
+        <div class="details-label">
+          <span>&#128193;</span> Categorie
+        </div>
+        <div class="details-value">
+          ${categoryTranslations[technique.category] || technique.category}
+        </div>
       </div>
-      <div class="details-value">
-        ${categoryTranslations[technique.category]}
+      <div class="details-row bg-light">
+        <div class="details-label">
+          <span>&#128221;</span> Vertaling
+        </div>
+        <div class="details-value">
+          ${technique.translation}
+        </div>
+      </div>
+      <div class="details-row">
+        <div class="details-label">
+          <span>&#127942;</span> Gordel
+        </div>
+        <div class="details-value">
+          ${beltTranslations[technique.belt] ?? ""}
+        </div>
       </div>
     </div>
-    <div class="details-row bg-light">
-      <div class="details-label">
-        <span>&#128221;</span> Vertaling
-      </div>
-      <div class="details-value">
-        ${technique.translation}
-      </div>
-    </div>
-    <div class="details-row">
-      <div class="details-label">
-        <span>&#127942;</span> Gordel
-      </div>
-      <div class="details-value">
-        ${beltTranslations[technique.belt] ?? ""}
-      </div>
-    </div>
-  </div>
-`;
+  `;
 
   searchView.style.display = "none";
   detailsView.style.display = "block";
@@ -104,17 +104,25 @@ function filterTechniques(searchText, mode = "text") {
   let filtered = [];
 
   if (mode === "text") {
-    filtered = Object.entries(techniques).filter(([name]) =>
-      name.toLowerCase().includes(searchText.toLowerCase()),
+    // Bij zoeken: doorzoek alles
+    filtered = Object.entries(techniques).filter(
+      ([name, data]) =>
+        name.toLowerCase().includes(searchText.toLowerCase()) ||
+        data.translation?.toLowerCase().includes(searchText.toLowerCase()),
     );
   } else if (mode === "belt") {
     filtered = Object.entries(techniques).filter(([_, technique]) =>
       technique.belt.toLowerCase().includes(searchText.toLowerCase()),
     );
+  } else if (mode === "init") {
+    // Bij eerste laden: alleen technieken met ingevulde belt
+    filtered = Object.entries(techniques).filter(
+      ([_, data]) => data.belt && data.belt.trim() !== "",
+    );
   }
 
   if (filtered.length === 0) {
-    techniquesList.innerHTML = `<div class="no-results">Geen technieken gevonden met "${searchText}"</div>`;
+    techniquesList.innerHTML = `<div class="no-results">Geen technieken gevonden${searchText ? ` met "${searchText}"` : ""}</div>`;
     return;
   }
 
@@ -183,7 +191,7 @@ async function initializeApp() {
 
   if (success) {
     searchInput.disabled = false;
-    filterTechniques("", "text");
+    filterTechniques("", "init");
 
     const techniqueName = window.location.hash.slice(1);
     if (techniqueName) {
