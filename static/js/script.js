@@ -1,4 +1,8 @@
 let techniques = {};
+let currentFilters = {
+  belt: null,
+  category: null,
+};
 
 const searchView = document.getElementById("searchView");
 const detailsView = document.getElementById("detailsView");
@@ -103,36 +107,39 @@ function showDetailsView(techniqueName) {
   );
 }
 
-function filterTechniques(searchText, mode = "text") {
-  let filtered = [];
+function applyFilters(searchText = "") {
+  let filtered = Object.entries(techniques);
 
-  if (mode === "text") {
-    // Bij zoeken: doorzoek alles
-    filtered = Object.entries(techniques).filter(
+  // Filter op zoektext
+  if (searchText.trim()) {
+    filtered = filtered.filter(
       ([name, data]) =>
         name.toLowerCase().includes(searchText.toLowerCase()) ||
         data.translation?.toLowerCase().includes(searchText.toLowerCase()),
     );
-  } else if (mode === "belt") {
-    filtered = Object.entries(techniques).filter(([_, technique]) =>
-      technique.belt.toLowerCase().includes(searchText.toLowerCase()),
-    );
-  } else if (mode === "category") {
-    filtered = Object.entries(techniques).filter(
-      ([_, technique]) =>
-        technique.category === searchText &&
-        technique.belt &&
-        technique.belt.trim() !== "",
-    );
-  } else if (mode === "init") {
-    // Bij eerste laden: alleen technieken met ingevulde belt
-    filtered = Object.entries(techniques).filter(
+  } else {
+    // Als geen zoektext: alleen technieken met belt tonen
+    filtered = filtered.filter(
       ([_, data]) => data.belt && data.belt.trim() !== "",
     );
   }
 
+  // Filter op belt
+  if (currentFilters.belt) {
+    filtered = filtered.filter(([_, technique]) =>
+      technique.belt.toLowerCase().includes(currentFilters.belt.toLowerCase()),
+    );
+  }
+
+  // Filter op category
+  if (currentFilters.category) {
+    filtered = filtered.filter(
+      ([_, technique]) => technique.category === currentFilters.category,
+    );
+  }
+
   if (filtered.length === 0) {
-    techniquesList.innerHTML = `<div class="no-results">Geen technieken gevonden${searchText ? ` met "${searchText}"` : ""}</div>`;
+    techniquesList.innerHTML = `<div class="no-results">Geen technieken gevonden</div>`;
     return;
   }
 
@@ -156,9 +163,7 @@ function filterTechniques(searchText, mode = "text") {
 }
 
 // Event listeners
-searchInput.addEventListener("input", (e) =>
-  filterTechniques(e.target.value, "text"),
-);
+searchInput.addEventListener("input", (e) => applyFilters(e.target.value));
 
 techniquesList.addEventListener("click", (e) => {
   const card = e.target.closest(".technique-card");
@@ -180,29 +185,53 @@ window.addEventListener("popstate", (e) => {
   }
 });
 
-// Belt filter
+// Belt filter - aangepast voor gecombineerde filtering
 document.querySelectorAll(".belt-filter").forEach((button) => {
   button.addEventListener("click", (e) => {
-    document
-      .querySelectorAll(".belt-filter")
-      .forEach((btn) => btn.classList.remove("active"));
-    e.target.classList.add("active");
-
     const belt = e.target.dataset.belt;
-    filterTechniques(belt, "belt");
+
+    // Toggle belt filter
+    if (currentFilters.belt === belt) {
+      // Als dezelfde belt aangeklikt wordt, deactiveer
+      currentFilters.belt = null;
+      e.target.classList.remove("active");
+    } else {
+      // Verwijder active van alle belt buttons
+      document
+        .querySelectorAll(".belt-filter")
+        .forEach((btn) => btn.classList.remove("active"));
+
+      // Activeer nieuwe belt
+      currentFilters.belt = belt;
+      e.target.classList.add("active");
+    }
+
+    applyFilters(searchInput.value);
   });
 });
 
-// Category filter
+// Category filter - aangepast voor gecombineerde filtering
 document.querySelectorAll(".category-filter").forEach((button) => {
   button.addEventListener("click", (e) => {
-    document
-      .querySelectorAll(".category-filter")
-      .forEach((btn) => btn.classList.remove("active"));
-    e.target.classList.add("active");
-
     const category = e.target.dataset.category;
-    filterTechniques(category, "category");
+
+    // Toggle category filter
+    if (currentFilters.category === category) {
+      // Als dezelfde category aangeklikt wordt, deactiveer
+      currentFilters.category = null;
+      e.target.classList.remove("active");
+    } else {
+      // Verwijder active van alle category buttons
+      document
+        .querySelectorAll(".category-filter")
+        .forEach((btn) => btn.classList.remove("active"));
+
+      // Activeer nieuwe category
+      currentFilters.category = category;
+      e.target.classList.add("active");
+    }
+
+    applyFilters(searchInput.value);
   });
 });
 
@@ -214,7 +243,7 @@ async function initializeApp() {
 
   if (success) {
     searchInput.disabled = false;
-    filterTechniques("", "init");
+    applyFilters("");
 
     const techniqueName = window.location.hash.slice(1);
     if (techniqueName) {
