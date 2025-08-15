@@ -6,6 +6,7 @@ const searchInput = document.getElementById("searchInput");
 const techniquesList = document.getElementById("techniquesList");
 const techniqueDetails = document.getElementById("techniqueDetails");
 const beltFilters = document.getElementById("beltFilters");
+const categoryFilters = document.getElementById("categoryFilters");
 
 // Load techniques from JSON
 async function loadTechniques() {
@@ -25,11 +26,13 @@ function showSearchView() {
   detailsView.style.display = "none";
   searchView.style.display = "block";
   beltFilters.style.display = "flex";
+  categoryFilters.style.display = "flex";
   history.pushState({ view: "search" }, "", location.pathname);
 }
 
 function showDetailsView(techniqueName) {
   beltFilters.style.display = "none";
+  categoryFilters.style.display = "none";
 
   const beltTranslations = {
     white: "Wit",
