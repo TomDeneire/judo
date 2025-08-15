@@ -165,6 +165,11 @@ function applyFilters(searchText = "") {
 // Event listeners
 searchInput.addEventListener("input", (e) => applyFilters(e.target.value));
 
+document.getElementById("clearFilters").addEventListener("click", () => {
+  // Eenvoudige page reload
+  window.location.reload();
+});
+
 techniquesList.addEventListener("click", (e) => {
   const card = e.target.closest(".technique-card");
   if (card) {
