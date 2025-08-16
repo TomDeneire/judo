@@ -26,6 +26,27 @@ async function loadTechniques() {
   }
 }
 
+// Parse YouTube URL to extract video ID and start time
+function parseYouTubeUrl(url) {
+  try {
+    const urlObj = new URL(url);
+    const videoId = urlObj.searchParams.get("v");
+    const startTime = urlObj.searchParams.get("t");
+
+    return {
+      videoId: videoId,
+      startTime: startTime,
+    };
+  } catch (error) {
+    // Fallback for malformed URLs
+    const videoId = url.split("v=")[1]?.split("&")[0];
+    return {
+      videoId: videoId,
+      startTime: null,
+    };
+  }
+}
+
 function showSearchView() {
   detailsView.style.display = "none";
   searchView.style.display = "block";
@@ -58,13 +79,15 @@ function showDetailsView(techniqueName) {
   const technique = techniques[techniqueName];
   if (!technique) return;
 
-  const videoId = technique.video.split("v=")[1];
+  // Parse YouTube URL to get video ID and start time
+  const { videoId, startTime } = parseYouTubeUrl(technique.video);
+  const embedUrl = `https://www.youtube.com/embed/${videoId}${startTime ? `?start=${startTime}` : ""}`;
 
   techniqueDetails.innerHTML = `
     <h2 class="technique-name">${techniqueName}</h2>
     <div class="video-container">
       <iframe
-        src="https://www.youtube.com/embed/${videoId}"
+        src="${embedUrl}"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
