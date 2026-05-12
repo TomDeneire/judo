@@ -201,6 +201,15 @@ document.getElementById("clearFilters").addEventListener("click", () => {
   window.location.reload();
 });
 
+document.getElementById("randomTechnique").addEventListener("click", () => {
+  const pool = Object.entries(techniques).filter(
+    ([_, data]) => data.belt && data.belt.trim() !== "",
+  );
+  if (pool.length === 0) return;
+  const [name] = pool[Math.floor(Math.random() * pool.length)];
+  showDetailsView(name);
+});
+
 techniquesList.addEventListener("click", (e) => {
   const card = e.target.closest(".technique-card");
   if (card) {
