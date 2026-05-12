@@ -135,11 +135,19 @@ function applyFilters(searchText = "") {
 
   // Filter op zoektext
   if (searchText.trim()) {
-    filtered = filtered.filter(
-      ([name, data]) =>
-        name.toLowerCase().includes(searchText.toLowerCase()) ||
-        data.translation?.toLowerCase().includes(searchText.toLowerCase()),
-    );
+    const normalize = (s) =>
+      (s || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[̀-ͯ]/g, "")
+        .replace(/[-_]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    const tokens = normalize(searchText).split(" ").filter(Boolean);
+    filtered = filtered.filter(([name, data]) => {
+      const haystack = `${normalize(name)} ${normalize(data.translation)}`;
+      return tokens.every((t) => haystack.includes(t));
+    });
   } else {
     // Als geen zoektext: alleen technieken met belt tonen
     filtered = filtered.filter(
