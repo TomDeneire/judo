@@ -5,6 +5,12 @@
     "translation": "voet-ineengestrengeld",
     "video": "https://www.youtube.com/watch?v=BWWb0GoAtZw"
   },
+  "ashi-guruma": {
+    "belt": "",
+    "category": "throw",
+    "translation": "voet-wiel",
+    "video": "https://www.youtube.com/watch?v=ROeayhvom9U"
+  },
   "daki-wakare": {
     "belt": "",
     "category": "throw",
@@ -73,6 +79,12 @@
     "translation": "heup-inrollen-binnenwaarts",
     "video": "https://www.youtube.com/watch?v=VBaHzKaCXss"
   },
+  "harai-tsurikomi-ashi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "wegvegen-ophangen-binnenwaarts-voet",
+    "video": "https://www.youtube.com/watch?v=gGPXvWL8VbE"
+  },
   "hikikomi-gaeshi": {
     "belt": "",
     "category": "throw",
@@ -139,29 +151,23 @@
     "translation": "schouder-rad",
     "video": "https://www.youtube.com/watch?v=cnHRhSy8yi4"
   },
-  "tomoe-nage": {
-    "belt": "sienna",
-    "category": "throw",
-    "translation": "cirkel-gooi",
-    "video": "https://www.youtube.com/watch?v=880WbHvHv6A"
-  },
   "kata-juji-jime": {
     "belt": "green",
     "category": "strangle",
     "translation": "schouder-gekruist-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=3VZVUAmiMD8"
   },
-  "kataha-jime": {
-    "belt": "blue",
-    "category": "strangle",
-    "translation": "enkele vleugel-wurgen (U18)",
-    "video": "https://www.youtube.com/watch?v=yaTGgRjnwB8"
-  },
   "kata-te-jime": {
     "belt": "sienna",
     "category": "strangle",
     "translation": "vorm-hand-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=cHeIs-fSqwE"
+  },
+  "kataha-jime": {
+    "belt": "blue",
+    "category": "strangle",
+    "translation": "enkele vleugel-wurgen (U18)",
+    "video": "https://www.youtube.com/watch?v=yaTGgRjnwB8"
   },
   "kawazu-gake": {
     "belt": "",
@@ -181,11 +187,11 @@
     "translation": "diagonaal-insluiten",
     "video": "https://www.youtube.com/watch?v=5_TS0YHdxcQ"
   },
-  "ko-soto-gari": {
-    "belt": "brown",
+  "kibisu-gaeshi": {
+    "belt": "",
     "category": "throw",
-    "translation": "klein-buitenkant-maaien",
-    "video": "https://www.youtube.com/watch?v=jeQ541ScLB4"
+    "translation": "hiel-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=tJylJYfBliA"
   },
   "ko-soto-gake": {
     "belt": "",
@@ -193,23 +199,17 @@
     "translation": "klein-buitenkant-haken",
     "video": "https://www.youtube.com/watch?v=8b6kY4s4zH4"
   },
-  "ushiro-goshi": {
-    "belt": "",
+  "ko-soto-gari": {
+    "belt": "brown",
     "category": "throw",
-    "translation": "achterwaarts-heup",
-    "video": "https://www.youtube.com/watch?v=ORIYstuxYT8"
+    "translation": "klein-buitenkant-maaien",
+    "video": "https://www.youtube.com/watch?v=jeQ541ScLB4"
   },
-  "utsuri-goshi": {
+  "ko-uchi-gaeshi": {
     "belt": "",
     "category": "throw",
-    "translation": "wissel-heup",
-    "video": "https://www.youtube.com/watch?v=4pQd_bEnlf0"
-  },
-  "tsuri-goshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "ophangen-heup",
-    "video": "https://www.youtube.com/watch?v=51Htlp7xEvE"
+    "translation": "klein-binnenkant-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=_MWAdYi_LC4"
   },
   "ko-uchi-gari": {
     "belt": "blue",
@@ -228,6 +228,12 @@
     "category": "throw",
     "translation": "heup-wiel",
     "video": "https://www.youtube.com/watch?v=SU7Id6uVJ44"
+  },
+  "kuchiki-taoshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "dode-boom-omverwerpen",
+    "video": "https://www.youtube.com/watch?v=ZNL47q1aJNY"
   },
   "kuzure-kami-shiho-gatame": {
     "belt": "green",
@@ -273,12 +279,25 @@
     "translation": "hoofdkussen-flankcontrole",
     "video": "https://www.youtube.com/watch?v=e5HrhANfDcU"
   },
+  "morote-gari": {
+    "belt": "",
+    "category": "throw",
+    "translation": "tweehandig-maaien",
+    "video": "https://www.youtube.com/watch?v=BHLQS4K85bs"
+  },
   "nage-no-kata": {
     "belt": "black",
     "category": "throw",
     "reference": "",
     "translation": "vormen van gooien",
     "video": "https://www.youtube.com/watch?v=L9eXTdrJAdk"
+  },
+  "nage-no-kata (koshi-waza)": {
+    "belt": "blue",
+    "category": "throw",
+    "reference": "",
+    "translation": "vormen van gooien (heupworpen)",
+    "video": "https://www.youtube.com/watch?t=825&v=bkhBZzE2HpM"
   },
   "nage-no-kata (openen)": {
     "belt": "green",
@@ -293,13 +312,6 @@
     "reference": "",
     "translation": "vormen van gooien",
     "video": "https://www.youtube.com/watch?t=499&v=bkhBZzE2HpM"
-  },
-  "nage-no-kata (koshi-waza)": {
-    "belt": "blue",
-    "category": "throw",
-    "reference": "",
-    "translation": "vormen van gooien (heupworpen)",
-    "video": "https://www.youtube.com/watch?t=825&v=bkhBZzE2HpM"
   },
   "nage-no-kata (te-waza)": {
     "belt": "sienna",
@@ -320,11 +332,29 @@
     "translation": "groot-heup",
     "video": "https://www.youtube.com/watch?v=yhu1mfy2vJ4"
   },
+  "o-guruma": {
+    "belt": "",
+    "category": "throw",
+    "translation": "groot-wiel",
+    "video": "https://www.youtube.com/watch?v=SnZciTAY9vc"
+  },
+  "o-soto-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "groot-buitenkant-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=8ZjM3X_EANo"
+  },
   "o-soto-gari": {
     "belt": "yellow",
     "category": "throw",
     "translation": "groot-buitenkant-maaien",
     "video": "https://www.youtube.com/watch?v=c-A_nP7mKAc"
+  },
+  "o-soto-guruma": {
+    "belt": "",
+    "category": "throw",
+    "translation": "groot-buitenkant-wiel",
+    "video": "https://www.youtube.com/watch?v=92KbCm6pQeI"
   },
   "o-soto-makikomi": {
     "belt": "",
@@ -332,11 +362,35 @@
     "translation": "groot-buitenkant-inrollen-binnenwaarts",
     "video": "https://www.youtube.com/watch?v=DGDv2oMwmas"
   },
+  "o-soto-otoshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "groot-buitenkant-laten vallen",
+    "video": "https://www.youtube.com/watch?v=2DsVvDw7b8g"
+  },
+  "o-uchi-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "groot-binnenkant-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=dCyZTXyjIXE"
+  },
   "o-uchi-gari": {
     "belt": "blue",
     "category": "throw",
     "translation": "groot-binnenkant-maaien",
     "video": "https://www.youtube.com/watch?v=0itJFhV9pDQ"
+  },
+  "obi-otoshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "gordel-laten vallen",
+    "video": "https://www.youtube.com/watch?v=ff8U2TVZIYI"
+  },
+  "obi-tori-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "gordel-grijpen-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=bpc82SrunUU"
   },
   "okuri-ashi-harai": {
     "belt": "sienna",
@@ -398,17 +452,35 @@
     "translation": "mouw-rad-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=E3nvQzClcAU"
   },
+  "sode-tsuri-komi-goshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "mouw-ophangen-binnenwaarts-heup",
+    "video": "https://www.youtube.com/watch?v=QsmAxpmYLOI"
+  },
   "soto-makikomi": {
     "belt": "",
     "category": "throw",
     "translation": "buitenkant-inrollen-binnenwaarts",
     "video": "https://www.youtube.com/watch?v=bWG9O1BVKtQ"
   },
+  "sukui-nage": {
+    "belt": "",
+    "category": "throw",
+    "translation": "schep-worp",
+    "video": "https://www.youtube.com/watch?v=vU6aJ2kFxoI"
+  },
   "sumi-gaeshi": {
     "belt": "blue",
     "category": "throw",
     "translation": "hoek-tegenaanval",
     "video": "https://www.youtube.com/watch?v=5VhduA5xkbA"
+  },
+  "sumi-otoshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "hoek-laten vallen",
+    "video": "https://www.youtube.com/watch?v=lLU9wv52ni0"
   },
   "tai-otoshi": {
     "belt": "green",
@@ -440,83 +512,35 @@
     "translation": "scheppend overnemen-tegenaanval",
     "video": "https://www.youtube.com/watch?v=TmTWgrmViZc"
   },
+  "tomoe-nage": {
+    "belt": "sienna",
+    "category": "throw",
+    "translation": "cirkel-gooi",
+    "video": "https://www.youtube.com/watch?v=880WbHvHv6A"
+  },
+  "tsubame-gaeshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "zwaardzwaluw-tegenaanval",
+    "video": "https://www.youtube.com/watch?v=GwweWqqFB5g"
+  },
   "tsukkomi-jime": {
     "belt": "",
     "category": "strangle",
     "translation": "duwen-wurgen (U18)",
     "video": "https://www.youtube.com/watch?v=dKKpnD3eLcY"
   },
+  "tsuri-goshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "ophangen-heup",
+    "video": "https://www.youtube.com/watch?v=51Htlp7xEvE"
+  },
   "tsuri-komi-goshi": {
     "belt": "green",
     "category": "throw",
     "translation": "ophangen-binnenwaarts-heup",
     "video": "https://www.youtube.com/watch?v=McfzA0yRVt4"
-  },
-  "sode-tsuri-komi-goshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "mouw-ophangen-binnenwaarts-heup",
-    "video": "https://www.youtube.com/watch?v=QsmAxpmYLOI"
-  },
-  "ko-uchi-gaeshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "klein-binnenkant-tegenaanval",
-    "video": "https://www.youtube.com/watch?v=_MWAdYi_LC4"
-  },
-  "uchi-mata-sukashi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "binnenkant-dij-ontwijken",
-    "video": "https://www.youtube.com/watch?v=V-RS3uhtVWM"
-  },
-  "kibisu-gaeshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "hiel-tegenaanval",
-    "video": "https://www.youtube.com/watch?v=tJylJYfBliA"
-  },
-  "kuchiki-taoshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "dode-boom-omverwerpen",
-    "video": "https://www.youtube.com/watch?v=ZNL47q1aJNY"
-  },
-  "morote-gari": {
-    "belt": "",
-    "category": "throw",
-    "translation": "tweehandig-maaien",
-    "video": "https://www.youtube.com/watch?v=BHLQS4K85bs"
-  },
-  "obi-tori-gaeshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "gordel-grijpen-tegenaanval",
-    "video": "https://www.youtube.com/watch?v=bpc82SrunUU"
-  },
-  "yama-arashi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "berg-rukwind",
-    "video": "https://www.youtube.com/watch?v=MGlyKmSuzdc"
-  },
-  "sumi-otoshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "hoek-laten vallen",
-    "video": "https://www.youtube.com/watch?v=lLU9wv52ni0"
-  },
-  "obi-otoshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "gordel-laten vallen",
-    "video": "https://www.youtube.com/watch?v=ff8U2TVZIYI"
-  },
-  "sukui-nage": {
-    "belt": "",
-    "category": "throw",
-    "translation": "schep-worp",
-    "video": "https://www.youtube.com/watch?v=vU6aJ2kFxoI"
   },
   "uchi-makikomi": {
     "belt": "",
@@ -536,29 +560,17 @@
     "translation": "binnenkant-dij-tegenaanval",
     "video": "https://www.youtube.com/watch?v=Sy6sLWxkWYw"
   },
-  "o-uchi-gaeshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "groot-binnenkant-tegenaanval",
-    "video": "https://www.youtube.com/watch?v=dCyZTXyjIXE"
-  },
-  "o-soto-gaeshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "groot-buitenkant-tegenaanval",
-    "video": "https://www.youtube.com/watch?v=8ZjM3X_EANo"
-  },
-  "tsubame-gaeshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "zwaardzwaluw-tegenaanval",
-    "video": "https://www.youtube.com/watch?v=GwweWqqFB5g"
-  },
   "uchi-mata-makikomi": {
     "belt": "",
     "category": "throw",
     "translation": "binnenkant-dij-inrollen-binnenwaarts",
     "video": "https://www.youtube.com/watch?v=jZXENTLpJCI"
+  },
+  "uchi-mata-sukashi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "binnenkant-dij-ontwijken",
+    "video": "https://www.youtube.com/watch?v=V-RS3uhtVWM"
   },
   "ude-garami": {
     "belt": "green",
@@ -644,12 +656,6 @@
     "translation": "zweven-laten vallen",
     "video": "https://www.youtube.com/watch?v=6H5tmncOY4Q"
   },
-  "o-soto-otoshi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "groot-buitenkant-laten vallen",
-    "video": "https://www.youtube.com/watch?v=2DsVvDw7b8g"
-  },
   "uki-waza": {
     "belt": "",
     "category": "throw",
@@ -674,6 +680,12 @@
     "translation": "ruggelings-werpen",
     "video": "https://www.youtube.com/watch?v=Fgi9b8DJ5sQ"
   },
+  "ushiro-goshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "achterwaarts-heup",
+    "video": "https://www.youtube.com/watch?v=ORIYstuxYT8"
+  },
   "ushiro-kesa-gatame": {
     "belt": "orange",
     "category": "grip",
@@ -693,6 +705,18 @@
     "translation": "achterwaartse val",
     "video": "https://www.youtube.com/watch?v=_g7rvsxTkz8"
   },
+  "utsuri-goshi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "wissel-heup",
+    "video": "https://www.youtube.com/watch?v=4pQd_bEnlf0"
+  },
+  "yama-arashi": {
+    "belt": "",
+    "category": "throw",
+    "translation": "berg-rukwind",
+    "video": "https://www.youtube.com/watch?v=MGlyKmSuzdc"
+  },
   "yoko-gake": {
     "belt": "",
     "category": "throw",
@@ -704,30 +728,6 @@
     "category": "throw",
     "translation": "zijwaarts-wiel",
     "video": "https://www.youtube.com/watch?v=MehP6I5cY2c"
-  },
-  "o-soto-guruma": {
-    "belt": "",
-    "category": "throw",
-    "translation": "groot-buitenkant-wiel",
-    "video": "https://www.youtube.com/watch?v=92KbCm6pQeI"
-  },
-  "o-guruma": {
-    "belt": "",
-    "category": "throw",
-    "translation": "groot-wiel",
-    "video": "https://www.youtube.com/watch?v=SnZciTAY9vc"
-  },
-  "ashi-guruma": {
-    "belt": "",
-    "category": "throw",
-    "translation": "voet-wiel",
-    "video": "https://www.youtube.com/watch?v=ROeayhvom9U"
-  },
-  "harai-tsurikomi-ashi": {
-    "belt": "",
-    "category": "throw",
-    "translation": "wegvegen-ophangen-binnenwaarts-voet",
-    "video": "https://www.youtube.com/watch?v=gGPXvWL8VbE"
   },
   "yoko-otoshi": {
     "belt": "",
