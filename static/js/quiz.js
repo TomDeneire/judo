@@ -243,7 +243,7 @@ function confetti(element, count) {
     }
 }
 
-// Explain a name word by word from the glossary, plus the full translation
+// Explain a name word by word from the glossary
 function explanation(name) {
     const parts = name
         .split("-")
@@ -253,9 +253,7 @@ function explanation(name) {
                 `<span class="quiz-word"><b>${part}</b> ${glossary[part]}</span>`,
         )
         .join("");
-    const translation = techniques[name].translation;
-    return `${parts ? `<div class="quiz-words">${parts}</div>` : ""}
-    <div class="quiz-translation">${translation}</div>`;
+    return `<div class="quiz-words">${parts}</div>`;
 }
 
 function helpButton(name) {
