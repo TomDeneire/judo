@@ -164,6 +164,18 @@ body {
   gap: 10px;
 }
 
+/* Two columns on wider screens */
+@media (min-width: 769px) {
+  .technique-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .technique-list .no-results {
+    grid-column: 1 / -1;
+  }
+}
+
 .technique-card {
   padding: 15px;
   border: 2px solid #ddd;
