@@ -265,11 +265,6 @@ body {
   flex-wrap: wrap;
 }
 
-.details-row.bg-light {
-  background-color: #f8f9fa;
-  border-radius: 6px;
-}
-
 .details-label {
   flex: 0 0 25%;
   max-width: 25%;

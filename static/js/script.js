@@ -131,7 +131,7 @@ function showDetailsView(techniqueName) {
           ${categoryTranslations[technique.category] || technique.category}
         </div>
       </div>
-      <div class="details-row bg-light">
+      <div class="details-row">
         <div class="details-label">
           <span>&#128221;</span> Vertaling
         </div>
