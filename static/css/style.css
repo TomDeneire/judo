@@ -184,7 +184,11 @@ body {
 .technique-name {
   font-weight: 600;
   margin-bottom: 4px;
-  text-transform: capitalize;
+}
+
+/* Only the first letter is capitalized: "Tate-shiho-gatame" */
+.technique-name::first-letter {
+  text-transform: uppercase;
 }
 
 .technique-translation {
