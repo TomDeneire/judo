@@ -472,7 +472,7 @@ body {
   background: #f8f9fa;
   border-radius: 6px;
   padding: 10px;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .quiz-explanation.visible {

@@ -357,12 +357,19 @@ function renderQuestion() {
             .join("");
     }
 
+    // A wrong answer always explains the correct name; otherwise it is shown via "?"
+    const explanationBox = `
+    <div id="quizExplanation" class="quiz-explanation ${answered && !correct ? "visible" : ""}">
+      ${answered && !correct ? explanation(question.target) : ""}
+    </div>`;
+
     const isLast = round.index === round.questions.length - 1;
     const feedback = answered
         ? `
       <div class="quiz-feedback ${correct ? "correct" : "wrong"} ${animate ? "slide-in" : ""}">
         <p class="quiz-feedback-title">${correct ? round.praise : "Bijna! Het juiste antwoord is:"}</p>
-        <p class="quiz-name">${displayName(question.target)} ${helpButton(question.target)}</p>
+        <p class="quiz-name">${displayName(question.target)} ${correct ? helpButton(question.target) : ""}</p>
+        ${explanationBox}
         <div class="quiz-actions">
           <button class="quiz-link" data-action="video" data-name="${question.target}">bekijk video</button>
           <button class="quiz-next" data-action="next">${isLast ? "resultaat" : "volgende →"}</button>
@@ -373,11 +380,10 @@ function renderQuestion() {
     return `
     ${renderProgress()}
     ${prompt}
-    <div id="quizExplanation" class="quiz-explanation"></div>
     <div class="quiz-options ${question.type === "nameToImage" ? "quiz-options-images" : ""}">
       ${options}
     </div>
-    ${feedback}
+    ${answered ? feedback : explanationBox}
   `;
 }
 
@@ -460,6 +466,7 @@ function handleClick(event) {
             const box = container.querySelector("#quizExplanation");
             box.innerHTML = explanation(name);
             box.classList.add("visible");
+            box.scrollIntoView({ behavior: "smooth", block: "nearest" });
             break;
         }
         case "video":
