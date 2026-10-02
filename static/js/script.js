@@ -15,6 +15,12 @@ const techniqueDetails = document.getElementById("techniqueDetails");
 const beltFilters = document.getElementById("beltFilters");
 const categoryFilters = document.getElementById("categoryFilters");
 
+// Plain yellow has too little contrast as a thin border on white
+function beltBorderColor(belt) {
+  if (belt === "yellow") return "#e0b800";
+  return belt || "#ccc";
+}
+
 // Load techniques from JSON
 async function loadTechniques() {
   try {
@@ -116,7 +122,7 @@ function showDetailsView(techniqueName) {
         allowfullscreen
       ></iframe>
     </div>
-    <div class="details-content border" style="border-color: ${technique.belt || "#ccc"};">
+    <div class="details-content border" style="border-color: ${beltBorderColor(technique.belt)};">
       <div class="details-row">
         <div class="details-label">
           <span>&#128193;</span> Categorie
@@ -201,7 +207,7 @@ function applyFilters(searchText = "") {
 
   techniquesList.innerHTML = filtered
     .map(([name, details]) => {
-      const borderColor = details.belt || "#ccc";
+      const borderColor = beltBorderColor(details.belt);
       const textColor = "#333";
 
       return `
