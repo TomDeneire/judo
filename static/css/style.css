@@ -365,6 +365,30 @@ body {
     font-size: 1.5rem;
   }
 
+  /* Compact header: logo next to the title, mode toggles below */
+  .site-header {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    column-gap: 12px;
+  }
+
+  .site-logo {
+    max-height: 56px;
+    margin-bottom: 0;
+  }
+
+  .site-header .clickable-title {
+    margin-bottom: 0;
+  }
+
+  .mode-toggles {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 12px;
+  }
+
   .belt-filter {
     width: 32px;
     height: 32px;
