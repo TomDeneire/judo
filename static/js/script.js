@@ -105,7 +105,7 @@ function showDetailsView(techniqueName) {
 
   // Parse YouTube URL to get video ID and start time
   const { videoId, startTime } = parseYouTubeUrl(technique.video);
-  const embedUrl = `https://www.youtube.com/embed/${videoId}${startTime ? `?start=${startTime}` : ""}`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}${startTime ? `?start=${startTime}` : ""}`;
 
   techniqueDetails.innerHTML = `
     <h2 class="technique-name">${techniqueName}</h2>
