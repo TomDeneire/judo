@@ -75,6 +75,16 @@ function imageUrl(name) {
     return IMAGE_DIR + credits[name].file;
 }
 
+// Load the next question's images in advance so the page does not reflow when it appears
+function preloadNextQuestion() {
+    const next = round.questions[round.index + 1];
+    if (!next) return;
+    const names = next.type === "imageToName" ? [next.target] : next.options;
+    names.forEach((name) => {
+        new Image().src = imageUrl(name);
+    });
+}
+
 // Best result per belt as {score, total}, kept in the browser as a convenience
 function loadBest() {
     try {
@@ -263,6 +273,7 @@ function render() {
     };
     container.innerHTML = renderers[screen]();
     if (round) round.justAnswered = false;
+    if (screen === "question") preloadNextQuestion();
 }
 
 function renderStart() {
