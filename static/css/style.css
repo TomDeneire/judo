@@ -365,6 +365,18 @@ body {
     font-size: 1.5rem;
   }
 
+  /* Use the full screen width instead of a floating card */
+  body {
+    padding: 0;
+    background: white;
+  }
+
+  .container {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 16px;
+  }
+
   /* Compact header: logo next to the title, mode toggles below */
   .site-header {
     display: grid;
