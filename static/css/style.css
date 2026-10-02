@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+/* Reserve space for the scrollbar so switching views does not shift the layout */
+html {
+  scrollbar-gutter: stable;
+}
+
 /* Basis body styling */
 body {
   font-family:
@@ -388,5 +393,421 @@ body {
 
   .search-container {
     gap: 4px;
+  }
+}
+
+/* Mode toggle (Lijst | Quiz) */
+.mode-toggles {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.mode-toggle {
+  padding: 6px 20px;
+  font-size: 16px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.mode-toggle.active {
+  background: #333;
+  color: #fff;
+}
+
+/* Quiz */
+.quiz-view {
+  display: none;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.quiz-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-subtitle,
+.quiz-progress {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.quiz-question {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-image {
+  max-width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.quiz-help {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background: #fff;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.quiz-explanation {
+  display: none;
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.quiz-explanation.visible {
+  display: block;
+}
+
+.quiz-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.quiz-options-images {
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz-option {
+  padding: 12px;
+  border: 3px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.quiz-option-name {
+  padding: 10px 18px;
+  border-radius: 999px;
+}
+
+.quiz-option-image {
+  padding: 4px;
+  width: min(100%, 360px);
+}
+
+.quiz-option-image img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  display: block;
+}
+
+.quiz-option:not(:disabled):hover {
+  background: #f9f9f9;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.quiz-option:disabled {
+  color: inherit;
+  cursor: default;
+}
+
+.quiz-option.correct {
+  border-color: #2e7d32;
+  background: #e8f5e9;
+}
+
+.quiz-option.wrong {
+  border-color: #c62828;
+  background: #ffebee;
+}
+
+.quiz-option.dimmed {
+  opacity: 0.5;
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.quiz-feedback.correct {
+  background: #e8f5e9;
+}
+
+.quiz-feedback.wrong {
+  background: #ffebee;
+}
+
+.quiz-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.quiz-next {
+  padding: 8px 20px;
+  font-size: 16px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quiz-link {
+  padding: 8px 12px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  color: #0d6efd;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.quiz-credits-link {
+  margin-top: 1rem;
+  padding: 4px;
+  font-size: 13px;
+  background: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+}
+
+.quiz-credits-link:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+.quiz-score {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.quiz-credits {
+  text-align: left;
+  font-size: 14px;
+  padding-left: 1.2rem;
+}
+
+/* Quiz: status, progress dots and explanation */
+.quiz-status {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.quiz-points,
+.quiz-streak {
+  display: inline-block;
+}
+
+.quiz-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 8px 0 1rem;
+}
+
+.quiz-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.quiz-dot.current {
+  background: #fff;
+  border: 2px solid #333;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.quiz-dot.correct {
+  background: #2e7d32;
+}
+
+.quiz-dot.wrong {
+  background: #c62828;
+}
+
+.quiz-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.quiz-word {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.quiz-translation {
+  color: #666;
+}
+
+.quiz-feedback-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Quiz: start and result screens */
+.quiz-belt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.quiz-belt-stars {
+  font-size: 12px;
+  color: #f5a623;
+  min-height: 1em;
+  line-height: 1;
+}
+
+.quiz-belt-score {
+  font-size: 11px;
+  color: #666;
+  min-height: 1em;
+  line-height: 1;
+}
+
+.quiz-stars {
+  font-size: 3rem;
+  letter-spacing: 8px;
+}
+
+.quiz-star {
+  display: inline-block;
+  color: #ddd;
+}
+
+.quiz-star.earned {
+  color: #f5a623;
+  animation: star-in 0.5s ease-out both;
+}
+
+.quiz-record {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Quiz: animations */
+.confetti-piece {
+  position: fixed;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 1000;
+  animation: confetti-burst 0.9s ease-out forwards;
+}
+
+.pop {
+  animation: pop 0.4s ease-out;
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+.bump {
+  animation: bump 0.4s ease-out;
+}
+
+.slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes shake {
+  20%,
+  60% {
+    transform: translateX(-8px);
+  }
+  40%,
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes bump {
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes star-in {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+}
+
+@keyframes confetti-burst {
+  from {
+    transform: translate(0, 0) rotate(0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--dx), calc(var(--dy) + 80px)) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pop,
+  .shake,
+  .bump,
+  .slide-in,
+  .quiz-dot.current,
+  .quiz-star.earned {
+    animation: none;
   }
 }

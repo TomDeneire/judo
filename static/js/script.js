@@ -1,3 +1,5 @@
+import { initQuiz, showQuiz } from "./quiz.js";
+
 let techniques = {};
 let currentFilters = {
   belt: null,
@@ -6,6 +8,7 @@ let currentFilters = {
 
 const searchView = document.getElementById("searchView");
 const detailsView = document.getElementById("detailsView");
+const quizView = document.getElementById("quizView");
 const searchInput = document.getElementById("searchInput");
 const techniquesList = document.getElementById("techniquesList");
 const techniqueDetails = document.getElementById("techniqueDetails");
@@ -47,12 +50,33 @@ function parseYouTubeUrl(url) {
   }
 }
 
+function setActiveMode(mode) {
+  document
+    .querySelectorAll(".mode-toggle")
+    .forEach((btn) =>
+      btn.classList.toggle("active", btn.dataset.mode === mode),
+    );
+}
+
 function showSearchView() {
   detailsView.style.display = "none";
+  quizView.style.display = "none";
+  setActiveMode("list");
   searchView.style.display = "block";
   beltFilters.style.display = "flex";
   categoryFilters.style.display = "flex";
   history.pushState({ view: "search" }, "", location.pathname);
+}
+
+function showQuizView() {
+  searchView.style.display = "none";
+  detailsView.style.display = "none";
+  beltFilters.style.display = "none";
+  categoryFilters.style.display = "none";
+  quizView.style.display = "block";
+  setActiveMode("quiz");
+  showQuiz();
+  history.pushState({ view: "quiz" }, "", "#quiz");
 }
 
 function showDetailsView(techniqueName) {
@@ -121,6 +145,7 @@ function showDetailsView(techniqueName) {
   `;
 
   searchView.style.display = "none";
+  quizView.style.display = "none";
   detailsView.style.display = "block";
 
   history.pushState(
@@ -225,9 +250,21 @@ document
 window.addEventListener("popstate", (e) => {
   if (e.state?.view === "details") {
     showDetailsView(e.state.technique);
+  } else if (e.state?.view === "quiz") {
+    showQuizView();
   } else {
     showSearchView();
   }
+});
+
+document.querySelectorAll(".mode-toggle").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.dataset.mode === "quiz") {
+      showQuizView();
+    } else {
+      showSearchView();
+    }
+  });
 });
 
 // Belt filter - aangepast voor gecombineerde filtering
@@ -289,9 +326,12 @@ async function initializeApp() {
   if (success) {
     searchInput.disabled = false;
     applyFilters("");
+    await initQuiz({ techniques, showDetails: showDetailsView });
 
     const techniqueName = window.location.hash.slice(1);
-    if (techniqueName) {
+    if (techniqueName === "quiz") {
+      showQuizView();
+    } else if (techniqueName) {
       const waitForTechnique = () => {
         if (techniques[techniqueName]) {
           showDetailsView(techniqueName);
